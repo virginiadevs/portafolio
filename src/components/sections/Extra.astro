@@ -1,0 +1,58 @@
+---
+import { certificates } from '@cv'
+import Section from "@/components/Section.astro"
+---
+
+<Section title="Certificaciones">
+    <ul>
+        {
+            certificates.map(
+                ({ name, issuer, date }) => {
+                const dateYear = new Date(date).getFullYear()
+                
+                return (
+                    <li>
+                        <article>
+                            <header>
+                                <div>
+                                    <h3>{name}</h3>
+                                    <h4>{issuer}</h4>
+                                </div>
+                            </header>
+
+                            <footer>
+                                <time>{dateYear}</time>
+                            </footer>
+                        </article>                        
+                    </li>
+                )
+            })
+        }
+    </ul>
+</Section>
+
+<style>
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    article h3 {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    time {
+        color: #666;
+        font-weight: 400;
+        font-size: .85rem;
+        letter-spacing: -0.05rem;
+    }
+</style>

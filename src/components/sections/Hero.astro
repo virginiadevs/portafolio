@@ -1,0 +1,109 @@
+---
+import { basics } from '@cv'
+import Section from '@/components/Section.astro'
+import Social from '@/components/sections/Social.astro'
+import Location from '@/icons/Location.astro'
+
+const { name, label, image, location, summary, availability } = basics
+const { city, region } = location
+const active = availability == 1 ? "Disponible para trabajar" : ""
+---
+
+<Section>
+    <div class="container">
+        <figure>
+            <img src={image} alt={name}>
+        </figure>
+
+        <div class="info">
+            <header>
+                <h1>{name}</h1>
+                <div class="availability">{active}</div>
+            </header>
+            
+            <h2>{label}</h2>
+            <h4><Location /> {city}, {region}</h4>
+            
+            <p>{summary}</p>
+
+            <footer>
+                <Social />
+            </footer>
+        </div>
+    </div>
+</Section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #dadada;
+        padding-bottom: 48px;
+    }
+
+    img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        width: 140px;
+        margin-top: 16px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding-left: 32px;
+    }
+
+    header {
+        display: flex;
+        align-items: self-end;
+        gap: 1rem;
+        /*justify-content: space-between;*/
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: -.5rem;
+    }
+
+    h2 {
+        color: #444;
+        font-size: 1.1rem;
+        text-wrap: balance;
+    }
+
+    h4 {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+    }
+
+    .availability {
+        color: var(--brand-color1);
+        border: 1px solid var(--brand-color1);
+        background: #fff;
+        padding: 0 8px 1px;
+        border-radius: 6px;
+        font-size: .7rem;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        border-radius: 8px;
+        padding: .5rem;
+        margin-left: -.5rem;
+    }
+
+    @media (max-width: 760px) { 
+        img { width: 70px; }    
+    }
+    @media (max-width: 500px) { 
+        .container { flex-direction: column; }
+        .info { padding-left: 0; padding-top: 10px; }
+    }
+</style>

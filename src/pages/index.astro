@@ -1,0 +1,44 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { basics } from '@cv';
+
+import About from '@/components/sections/About.astro';
+import Education from '@/components/sections/Education.astro';
+import Experience from '@/components/sections/Experience.astro';
+import Extra from '@/components/sections/Extra.astro';
+import Footer from '@/components/sections/Footer.astro';
+import Hero from '@/components/sections/Hero.astro';
+import Projects from '@/components/sections/Projects.astro';
+import Skills from '@/components/sections/Skills.astro';
+
+const { name, label } = basics;
+---
+
+<Layout title=`${name} | ${label}`>
+	<main>
+		<Hero />
+		<Experience />
+		<Skills />
+		<Projects />
+		<Education />
+		<Extra />
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding: 4rem;
+		margin: auto;
+		width: 100%;
+		/*background: radial-gradient(#dadada 1px, transparent 1px);
+		background-size: 14px 14px;*/
+	}
+
+	@media (max-width: 500px) { 
+        main { padding: 1rem; }    
+    }
+	@media (max-width: 700px) { 
+        main { padding: 2rem; }    
+    }
+</style>

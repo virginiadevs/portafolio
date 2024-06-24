@@ -1,0 +1,87 @@
+---
+import { projects } from '@cv'
+import Section from "@/components/Section.astro"
+---
+
+<Section title="Proyectos destacados">
+    <ul>
+        {
+            projects.map(( { name, company, image, description, url }) => {
+                return (
+                    <li>
+                        <article>
+                            <header>
+                                <h3>{name}</h3>
+                                <h4>{company}</h4>
+                            </header>
+
+                            <div class="info">
+                                <p>{description}</p>
+                            </div>
+
+                            <figure>
+                                <a href={url} target="_blank"><img src={image} alt={name}></a>
+                            </figure>
+                        </article>                        
+                    </li>
+                )
+            })
+        }
+    </ul>
+</Section>
+
+<style>
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 16px;
+    }
+
+    article {
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.15);
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        height: 100%;
+    }
+
+    article .info { 
+        /* flex: 1; */
+        margin-top: -10px;
+    }
+
+    article h3 {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    figure {
+        text-align: center;
+        width: auto;
+        overflow: hidden;
+        flex: 1;
+    }
+
+    img {
+        transition: transform 1.5s, filter 1.5s ease-in-out;
+        max-width: 100%;
+    }
+
+    img:hover { 
+        transform: scale(1.8) translateY(24%) translateX(24%);
+    }
+
+    @media (min-width: 620px) and (max-width: 790px) { 
+        ul { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }    
+    }
+</style>

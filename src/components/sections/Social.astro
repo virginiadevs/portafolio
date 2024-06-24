@@ -1,0 +1,73 @@
+---
+import { basics } from '@cv'
+import Github from '@/icons/Github.astro'
+import LinkedIn from '@/icons/LinkedIn.astro'
+import Mail from '@/icons/Mail.astro'
+
+const { email, profiles } = basics
+const SOCIAL_ICONS: Record<string, any> = {
+    Github,
+    LinkedIn
+}
+---
+{
+    <a href="curriculum.pdf"
+        title="Descargar CV"
+        target="_blank"
+        class="button">
+        Descargar CV
+    </a>
+}
+{
+    <a href={`mailto:${email}`}
+        title="Enviar email"
+        target="_blank">
+        Enviar email &nbsp; <Mail />
+    </a>
+}
+{
+    profiles.map(({ network, url }) => {
+        const Icon = SOCIAL_ICONS[network]
+
+        return (
+            <a href={url} 
+            title={`Visitar perfil de ${network}`}
+            target="_blank">
+                {network} &nbsp; <Icon />
+            </a>
+        )
+
+    })
+}
+
+<style>
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-color1);
+        background: #fff;
+        border: 1px solid var(--brand-color1);
+        padding: 16px 14px;
+        height: 32px;
+        width: auto;
+        border-radius: 16px;
+        font-size: 0.85rem;
+        box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.1);
+    }
+
+    a:hover {
+        background: var(--brand-color3);
+        border: 1px solid var(--brand-color3);
+    }
+
+    .button {
+        color: #fff;
+        background: var(--brand-color1);
+        border: 1px solid var(--brand-color1);
+    }
+
+    .button:hover {
+        color: var(--brand-color1);
+    }
+</style>
