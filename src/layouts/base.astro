@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta property="og:title" content={title}>
 		<meta property="og:image" content="/captura-portafolio.webp">
 		<meta property="og:description" content="This is just an example page.">
-		<meta property="og:url" content="https://example.com/page.html"> <!-- PONER MI GITHUB PAGES -->
+		<meta property="og:url" content="https://example.com/page.html">
 	</head>
 	<body>
 		<slot />
@@ -44,15 +44,11 @@ const { title } = Astro.props;
 
 	html {
 		font-family: system-ui, sans-serif;
-<<<<<<< HEAD:src/layouts/base.astro
 	}
 
 	html.dark {
 		background-color: var(--dark-bgcolor);
 		color: var(--light-bgcolor);
-=======
-		letter-spacing: -0.025rem;
->>>>>>> c1b7d5e3a8f2f753fb37f16d40485ce4ec4836a1:src/layouts/Layout.astro
 	}
 
 	code {
@@ -140,22 +136,8 @@ const { title } = Astro.props;
 		margin: 0;
 		text-wrap: pretty;
 
-<<<<<<< HEAD:src/layouts/base.astro
 		.dark & {
 			color: var(--lighter-tcolor);
 		}
-=======
-	body {
-		/*background: #faf7f5;
-		background: var(--brand-color4);*/
-
-		position: relative;
-		z-index: -2;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		/*background: radial-gradient(ellipse 80% 80% at 50% -20%, #7877c64d,#fff);*/
-		background: radial-gradient(60% 120% at 50% 10%, #fff 0, #c4b5fd4d 100%);	
->>>>>>> c1b7d5e3a8f2f753fb37f16d40485ce4ec4836a1:src/layouts/Layout.astro
 	}
 </style>
