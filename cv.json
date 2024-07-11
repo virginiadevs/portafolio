@@ -190,7 +190,8 @@
       "highlights": [
         "Won award at AIHacks 2016"
       ],
-      "url": "https://cardiopatch.eu/es/"
+      "url": "https://cardiopatch.eu/es/",
+      "code": ""
     },
     {
       "name": "Pantallas Táctiles",
@@ -204,7 +205,8 @@
       "highlights": [
         "Won award at AIHacks 2016"
       ],
-      "url": "https://pantallastactiles.net/"
+      "url": "https://pantallastactiles.net/",
+      "code": ""
     } 
   ]
 }

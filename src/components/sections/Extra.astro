@@ -1,6 +1,6 @@
 ---
-import { certificates } from '@cv'
-import Section from "@/components/Section.astro"
+import { certificates } from '@cv';
+import Section from "@/components/Section.astro";
 ---
 
 <Section title="Certificaciones">
@@ -14,15 +14,9 @@ import Section from "@/components/Section.astro"
                     <li>
                         <article>
                             <header>
-                                <div>
-                                    <h3>{name}</h3>
-                                    <h4>{issuer}</h4>
-                                </div>
+                                <h3>{name}</h3>
+                                <h4>{issuer} | <time>{dateYear}</time></h4>
                             </header>
-
-                            <footer>
-                                <time>{dateYear}</time>
-                            </footer>
                         </article>                        
                     </li>
                 )
@@ -34,25 +28,27 @@ import Section from "@/components/Section.astro"
 <style>
     ul {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: max-content;
         gap: 1rem;
-    }
 
-    article h3 {
-        font-weight: 600;
-        font-size: 1rem;
-    }
-    
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+        & header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
 
-    time {
-        color: #666;
-        font-weight: 400;
-        font-size: .85rem;
-        letter-spacing: -0.05rem;
+            & h3 {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+            
+            & h4 {
+                text-align: right;
+                align-content: center;
+
+                & time {
+                    letter-spacing: -0.05rem;
+                }
+            }
+        }
     }
 </style>

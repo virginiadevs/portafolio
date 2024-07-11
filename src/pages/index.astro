@@ -1,5 +1,5 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from '@/layouts/base.astro';
 import { basics } from '@cv';
 
 import About from '@/components/sections/About.astro';
@@ -7,7 +7,9 @@ import Education from '@/components/sections/Education.astro';
 import Experience from '@/components/sections/Experience.astro';
 import Extra from '@/components/sections/Extra.astro';
 import Footer from '@/components/sections/Footer.astro';
+import Header from '@/components/sections/Header.astro';
 import Hero from '@/components/sections/Hero.astro';
+import Langs from '@/components/sections/Langs.astro';
 import Projects from '@/components/sections/Projects.astro';
 import Skills from '@/components/sections/Skills.astro';
 
@@ -16,11 +18,13 @@ const { name, label } = basics;
 
 <Layout title=`${name} | ${label}`>
 	<main>
+		<Header />
 		<Hero />
 		<Experience />
 		<Skills />
 		<Projects />
 		<Education />
+		<Langs />
 		<Extra />
 		<Footer />
 	</main>
@@ -31,14 +35,9 @@ const { name, label } = basics;
 		padding: 4rem;
 		margin: auto;
 		width: 100%;
-		/*background: radial-gradient(#dadada 1px, transparent 1px);
-		background-size: 14px 14px;*/
 	}
 
-	@media (max-width: 500px) { 
-        main { padding: 1rem; }    
-    }
-	@media (max-width: 700px) { 
-        main { padding: 2rem; }    
+	@media (width < 600px) {
+		main { padding: 2rem; }
     }
 </style>

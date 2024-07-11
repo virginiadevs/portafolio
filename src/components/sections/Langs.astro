@@ -1,14 +1,15 @@
 ---
-import { skills } from '@cv';
+import { languages } from '@cv';
 import Section from "@/components/Section.astro";
 ---
 
-<Section title="Tecnologías">
+<Section title="Idiomas">
     <ul>
         {
-            skills.map(( { name, icon }) => (
+            languages.map(( { language, fluency }) => (
                 <li>
-                    <span><img src={icon}> {name}</span>
+                    <span>{language}</span>
+                    <small>{fluency}</small>
                 </li>
             ))
         }
@@ -18,9 +19,10 @@ import Section from "@/components/Section.astro";
 <style>
     ul {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        gap: 1rem 2rem;
-        padding-top: .4rem;
+        gap: 1rem;
+        padding: .4rem 0 0 .2rem;
 
         & li {
             font-size: .9rem;

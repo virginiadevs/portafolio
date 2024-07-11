@@ -1,73 +1,87 @@
 ---
-import { basics } from '@cv'
-import Github from '@/icons/Github.astro'
-import LinkedIn from '@/icons/LinkedIn.astro'
-import Mail from '@/icons/Mail.astro'
+import { basics } from '@cv';
+import Github from '@/icons/Github.astro';
+import LinkedIn from '@/icons/LinkedIn.astro';
+import Mail from '@/icons/Mail.astro';
 
-const { email, profiles } = basics
+const { email, profiles } = basics;
 const SOCIAL_ICONS: Record<string, any> = {
     Github,
     LinkedIn
 }
 ---
-{
-    <a href="curriculum.pdf"
-        title="Descargar CV"
-        target="_blank"
-        class="button">
-        Descargar CV
-    </a>
-}
-{
-    <a href={`mailto:${email}`}
-        title="Enviar email"
-        target="_blank">
-        Enviar email &nbsp; <Mail />
-    </a>
-}
-{
-    profiles.map(({ network, url }) => {
-        const Icon = SOCIAL_ICONS[network]
 
-        return (
-            <a href={url} 
-            title={`Visitar perfil de ${network}`}
+<footer>
+    {
+        <a href="curriculum.pdf"
+            title="Descargar CV"
             target="_blank">
-                {network} &nbsp; <Icon />
-            </a>
-        )
+            Descargar CV
+        </a>
+    }
+    {
+        <a href={`mailto:${email}`}
+            title="Enviar email"
+            target="_blank">
+            Enviar email &nbsp; <Mail />
+        </a>
+    }
+    {
+        profiles.map(({ network, url }) => {
+            const Icon = SOCIAL_ICONS[network]
 
-    })
-}
+            return (
+                <a href={url} 
+                title={`Visitar perfil de ${network}`}
+                target="_blank">
+                    {network} &nbsp; <Icon />
+                </a>
+            )
+
+        })
+    }
+</footer>
 
 <style>
-    a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--brand-color1);
-        background: #fff;
-        border: 1px solid var(--brand-color1);
-        padding: 16px 14px;
-        height: 32px;
-        width: auto;
-        border-radius: 16px;
-        font-size: 0.85rem;
-        box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.1);
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        & a {
+            --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
+            --gradient-light: linear-gradient(var(--light-bgcolor), var(--light-bgcolor)) padding-box;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-textcolor);
+            background: var(--gradient-light), var(--gradient);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: .25rem .6rem .3rem;
+            font-size: 0.8rem;
+
+            &:hover {
+                color: var(--light-bgcolor);
+            }
+        }
     }
 
-    a:hover {
-        background: var(--brand-color3);
-        border: 1px solid var(--brand-color3);
+    :global(.dark) footer a {
+        --gradient-dark: linear-gradient(var(--dark-bgcolor), var(--dark-bgcolor)) padding-box;
+        background: var(--gradient-dark), var(--gradient);
     }
 
-    .button {
-        color: #fff;
-        background: var(--brand-color1);
-        border: 1px solid var(--brand-color1);
+    footer a:hover {
+        background: var(--gradient);
+        border: 2px solid transparent;
     }
 
-    .button:hover {
-        color: var(--brand-color1);
+    @media (width < 500px) {
+        footer {
+            justify-content: center;
+        }
     }
 </style>

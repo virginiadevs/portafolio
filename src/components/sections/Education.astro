@@ -1,6 +1,6 @@
 ---
-import { education } from '@cv'
-import Section from "@/components/Section.astro"
+import { education } from '@cv';
+import Section from "@/components/Section.astro";
 ---
 
 <Section title="Formación">
@@ -18,7 +18,7 @@ import Section from "@/components/Section.astro"
                             <header>
                                 <div>
                                     <h3>{course}</h3>
-                                    <h4>{institution} <time>| {years}</time></h4>
+                                    <h4>{institution} | <time>{years}</time></h4>
                                 </div>
                             </header>
                         </article>                        
@@ -32,29 +32,27 @@ import Section from "@/components/Section.astro"
 <style>
     ul {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: max-content;
         gap: 1rem;
-        margin-top: 16px;
-    }
 
-    article h3 {
-        font-weight: 600;
-        font-size: 1rem;
-    }
+        & header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
 
-    header {
-        margin-bottom: 4px;
-    }
+            & h3 {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+            
+            & h4 {
+                text-align: right;
+                align-content: center;
 
-    time {
-        color: #666;
-        font-weight: 400;
-        font-size: .85rem;
-        letter-spacing: -0.05rem;
-    }
-
-    
-    @media (max-width: 900px) { 
-        ul { gap: 2rem; }    
+                & time {
+                    letter-spacing: -0.05rem;
+                }
+            }
+        }
     }
 </style>

@@ -1,6 +1,6 @@
 ---
-import { work } from '@cv'
-import Section from "@/components/Section.astro"
+import { work } from '@cv';
+import Section from "@/components/Section.astro";
 ---
 
 <Section title="Experiencia">
@@ -17,7 +17,7 @@ import Section from "@/components/Section.astro"
                         <article>
                             <header>
                                 <h3>{position}</h3>
-                                <h4>{name} <time>| {years}</time></h4>
+                                <h4>{name} | <time>{years}</time></h4>
                             </header>
 
                             <footer>
@@ -36,17 +36,25 @@ import Section from "@/components/Section.astro"
         display: flex;
         flex-direction: column;
         gap: .5rem;
-    }
 
-    article h3 {
-        font-weight: 600;
-        font-size: 1rem;
-        margin-bottom: 4px;
-    }
+        & header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
 
-    time {
-        font-weight: 400;
-        color: #666;
-        font-size: .85rem;
+            & h3 {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            & h4 {
+                text-align: right;
+                align-content: center;
+
+                & time {
+                    letter-spacing: -0.05rem;
+                }
+            }
+        }
     }
 </style>
