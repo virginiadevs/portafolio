@@ -2,7 +2,7 @@
   "basics": {
     "name": "Virginia Calvo",
     "label": "Desarrolladora Web Junior",
-    "image": "me.webp",
+    "image": "src/img/me.webp",
     "email": "virginiacalvopenin@gmail.com",
     "phone": "618188647",
     "availability": 1,
@@ -125,19 +125,19 @@
       ]
     },
     {
-      "name": "PHP",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
-      "level": "Junior",
-      "keywords": [
-        "CodeIgniter", "Desarrollo web", "Backend"
-      ]
-    },
-    {
       "name": "WordPress",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
       "level": "Junior",
       "keywords": [
         "CMS", "Elementor", "WooCommerce", "Custom Fields", "Desarrollo web", "Frontend"
+      ]
+    },
+    {
+      "name": "PHP",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "CodeIgniter", "Desarrollo web", "Backend"
       ]
     },
     {
@@ -181,7 +181,7 @@
     {
       "name": "Cardiopatch",
       "company": "Trilogic",
-      "image": "proyecto-cardiopatch.webp",
+      "image": "src/img/proyecto-cardiopatch.webp",
       "isActive": true,
       "description": "Página web sobre cardiología, desarrollada en WordPress, con campos personalizados, código CSS y jQuery.",
       "keywords": [
@@ -190,13 +190,12 @@
       "highlights": [
         "Won award at AIHacks 2016"
       ],
-      "url": "https://cardiopatch.eu/es/",
-      "code": ""
+      "url": "https://cardiopatch.eu/es/"
     },
     {
       "name": "Pantallas Táctiles",
       "company": "Trilogic",
-      "image": "proyecto-pantallas-tactiles.webp",
+      "image": "src/img/proyecto-pantallas-tactiles.webp",
       "isActive": true,
       "description": "Ecommerce destinado a la venta de pantallas interactivas y accesorios, desarollada con WordPress, WooCommerce, código CSS y jQuery personalizados.",
       "keywords": [
@@ -205,8 +204,7 @@
       "highlights": [
         "Won award at AIHacks 2016"
       ],
-      "url": "https://pantallastactiles.net/",
-      "code": ""
+      "url": "https://pantallastactiles.net/"
     } 
   ]
 }
