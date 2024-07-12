@@ -47,7 +47,6 @@ const SOCIAL_ICONS: Record<string, any> = {
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
-        justify-content: center;
 
         & a {
             --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
@@ -79,5 +78,11 @@ const SOCIAL_ICONS: Record<string, any> = {
     footer a:hover {
         background: var(--gradient);
         border: 2px solid transparent;
+    }
+
+    @media (width < 500px) {
+        footer {
+            justify-content: center;
+        }
     }
 </style>
