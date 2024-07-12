@@ -1,3 +1,3 @@
 # Mi portafolio
 
-![proyecto-portafolio](https://github.com/virginiadevs/portafolio/assets/57789020/03beb9bd-34d7-4d07-83cd-c90195043f9b)
+![portfolio-preview](https://github.com/user-attachments/assets/8d6a41be-8ec0-46ad-84e5-1a1e7c29b58c)
