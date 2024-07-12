@@ -47,6 +47,7 @@ const SOCIAL_ICONS: Record<string, any> = {
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
+        justify-content: center;
 
         & a {
             --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
@@ -60,8 +61,9 @@ const SOCIAL_ICONS: Record<string, any> = {
             border: 2px solid transparent;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: .25rem .6rem .3rem;
+            padding: .25rem 0 .3rem;
             font-size: 0.8rem;
+            width: 110px;
 
             &:hover {
                 color: var(--light-bgcolor);
@@ -77,11 +79,5 @@ const SOCIAL_ICONS: Record<string, any> = {
     footer a:hover {
         background: var(--gradient);
         border: 2px solid transparent;
-    }
-
-    @media (width < 500px) {
-        footer {
-            justify-content: center;
-        }
     }
 </style>
