@@ -1,0 +1,39 @@
+---
+import { skills } from "@/data/cv.json";
+import Section from "@/components/Section.astro";
+---
+
+<Section title="Tecnologías">
+    <ul>
+        {
+            skills.map(( { name, icon }) => (
+                <li>
+                    <span><img src={icon} alt={`Icono de ${name}`}> {name}</span>
+                </li>
+            ))
+        }
+    </ul>
+</Section>
+
+<style>
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        padding-top: .4rem;
+
+        & li {
+            font-size: .9rem;
+
+            & span {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+            }
+
+            & img {
+                width: 25px;
+            }
+        }
+    }
+</style>

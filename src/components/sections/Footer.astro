@@ -1,0 +1,62 @@
+---
+import { basics } from "@/data/cv.json";
+import Section from "@/components/Section.astro";
+import Social from "@/components/sections/Social.astro";
+
+const { name, label } = basics;
+const logo = "src/img/virginiadevs-logo.webp";
+---
+
+<Section>
+    <footer>
+        <div class="contact">
+            <figure>
+                <img src={logo} alt="VirginiaDevs logo">
+            </figure>
+
+            <div class="info">
+                <p class="title">{name}</p>
+                <p class="subtitle">{label}</p>    
+            </div>
+        </div>
+
+        <Social />
+    </footer>
+</Section>
+
+<style>
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+
+        margin-block: 5rem -7rem;
+        padding-block: 2rem;
+
+        & .contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+
+            & figure {
+                width: 40px;
+
+                & img {
+                    width: 100%;
+                    background: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            & .title {
+                font-weight: 600;
+            }
+
+            & .subtitle {
+                font-size: .8rem;
+            }
+        }
+    }
+</style>

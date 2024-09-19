@@ -1,0 +1,211 @@
+{
+  "basics": {
+    "name": "Virginia Calvo",
+    "label": "Desarrolladora Web Junior",
+    "image": "src/img/me.webp",
+    "email": "virginiacalvopenin@gmail.com",
+    "phone": "618188647",
+    "availability": 1,
+    "url": "",
+    "summary": "Desarrolladora web full stack con 2 años de experiencia. Páginas web, aplicaciones web, ecommerce. Apasionada del diseño frontend, pongo lo mejor de mí en cada proyecto.",
+    "location": {
+      "address": "",
+      "postalCode": "32654",
+      "city": "Ourense",
+      "countryCode": "ES",
+      "region": "España"
+    },
+    "profiles": [{
+        "network": "Github",
+        "username": "VirginiaDevs",
+        "url": "https://github.com/virginiadevs"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "virginiacalvopenin",
+        "url": "https://linkedin.com/in/virginiacalvopenin"
+      }
+    ]
+  },
+  "work": [{
+    "name": "Trilogic",
+    "position": "Desarrollo web full stack",
+    "url": "https://trilogic.eus",
+    "startDate": "2019-06-01",
+    "endDate": "2021-11-01",
+    "summary": "Diseño de páginas web y tiendas online con WordPress, WooCommerce, código CSS y jQuery personalizados. Desarrollo de aplicaciones web mediante HTML, CSS Bootstrap, jQuery y PHP CodeIgniter 3. Desarrollo de aplicaciones para Alexa en Node.js.",
+    "highlights": [
+      "Started the company"
+    ]
+  }],
+  "education": [
+    {
+      "institution": "Uni Eibar-Ermua",
+      "course": "Especialización en ciberseguridad",
+      "url": "https://uni.eus/es/",
+      "area": "Informática",
+      "studyType": "Especialización",
+      "startDate": "2019-09-08",
+      "endDate": "2020-06-20",
+      "score": "4.0"
+    },
+    {
+      "institution": "Uni Eibar-Ermua",
+      "course": "Desarrollo de aplicaciones web",
+      "url": "https://uni.eus/es/",
+      "area": "Informática",
+      "studyType": "Grado Superior",
+      "startDate": "2018-09-08",
+      "endDate": "2019-06-20",
+      "score": "4.0"
+    },
+    {
+      "institution": "Uni Eibar-Ermua",
+      "course": "Desarrollo de aplicaciones multiplataforma",
+      "url": "https://uni.eus/es/",
+      "area": "Informática",
+      "studyType": "Grado Superior",
+      "startDate": "2012-09-08",
+      "endDate": "2015-06-20",
+      "score": "4.0"
+    }
+  ],
+  "volunteer": [{
+    "organization": "Organization",
+    "position": "Volunteer",
+    "url": "https://organization.com/",
+    "startDate": "2012-01-01",
+    "endDate": "2013-01-01",
+    "summary": "Description…",
+    "highlights": [
+      "Awarded 'Volunteer of the Month'"
+    ]
+  }],
+  "awards": [{
+    "title": "Award",
+    "date": "2014-11-01",
+    "awarder": "Company",
+    "summary": "There is no spoon."
+  }],
+  "certificates": [{
+    "name": "Programa Generación Digital Agentes del Cambio",
+    "date": "2024-05-14",
+    "issuer": "Estudios Rafer",
+    "url": "https://certificate.com"
+  }],
+  "publications": [{
+    "name": "Publication",
+    "publisher": "Company",
+    "releaseDate": "2014-10-01",
+    "url": "https://publication.com",
+    "summary": "Description…"
+  }],
+  "skills": [{
+      "name": "HTML",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "Desarrollo web", "Frontend"
+      ]
+    },
+    {
+      "name": "CSS",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "Bootstrap", "Desarrollo web", "Frontend", "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "jQuery", "Desarrollo web", "Frontend", "Backend", "Fullstack"
+      ]
+    },
+    {
+      "name": "WordPress",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+      "level": "Junior",
+      "keywords": [
+        "CMS", "Elementor", "WooCommerce", "Custom Fields", "Desarrollo web", "Frontend"
+      ]
+    },
+    {
+      "name": "PHP",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "CodeIgniter", "Desarrollo web", "Backend"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+      "level": "Junior",
+      "keywords": [
+        "Alexa", "Alexa Skills"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Gallego",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Euskera",
+      "fluency": "Certificado B2"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Nivel medio"
+    }
+  ],
+  "interests": [{
+    "name": "Aprendiendo de forma autodidacta",
+    "keywords": [
+      "Astro", "React"
+    ]
+  }],
+  "references": [{
+    "name": "Jane Doe",
+    "reference": "Reference…"
+  }],
+  "projects": [
+    {
+      "name": "Cardiopatch",
+      "company": "Trilogic",
+      "image": "src/img/proyecto-cardiopatch.webp",
+      "isActive": true,
+      "description": "Página web sobre cardiología, desarrollada en WordPress, con campos personalizados, código CSS y jQuery.",
+      "keywords": [
+        "WordPress", "CSS", "jQuery"
+      ],
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://cardiopatch.eu/es/"
+    },
+    {
+      "name": "Pantallas Táctiles",
+      "company": "Trilogic",
+      "image": "src/img/proyecto-pantallas-tactiles.webp",
+      "isActive": true,
+      "description": "Ecommerce destinado a la venta de pantallas interactivas y accesorios, desarollada con WordPress, WooCommerce, código CSS y jQuery personalizados.",
+      "keywords": [
+        "WordPress", "WooCommerce", "CSS", "jQuery"
+      ],
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://pantallastactiles.net/",
+      "code": ""
+    } 
+  ]
+}

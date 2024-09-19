@@ -1,0 +1,133 @@
+---
+import { projects } from "@/data/cv.json";
+import Section from "@/components/Section.astro";
+
+import Github from "@/icons/Github.astro";
+import Link from "@/icons/Link.astro";
+---
+
+<Section title="Proyectos destacados">
+    <ul>
+        {
+            projects.slice(0,4).map(( { name, company, image, description, url, code }) => {
+                return (
+                    <li>
+                        <article>
+                            <header>
+                                <h3>{name}</h3>
+                                <h4>{company}</h4>
+                            </header>
+
+                            <div class="info">
+                                <p>{description}</p>
+                            </div>
+
+                            <figure>
+                                <a href={url} target="_blank"><img src={image} alt={name}></a>
+                            </figure>
+
+                            <footer>
+                                {
+                                    url ?   <a href={url}
+                                                title={`Ver proyecto ${name}`}
+                                                target="_blank">
+                                                Web &nbsp;<Link />
+                                            </a>
+                                        : ""
+                                }
+                                {
+                                    code ?  <a href={code}
+                                                title={`Ver código ${name}`}
+                                                target="_blank">
+                                                Código &nbsp;<Github />
+                                            </a>
+                                        : ""
+                                }
+                            </footer>
+                        </article>                        
+                    </li>
+                )
+            })
+        }
+    </ul>
+</Section>
+
+<style>
+    ul {
+        --light-shadow: #e6e6e6;
+        --dark-shadow: #404a59;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding-top: .5rem;
+
+        & article {
+            border-radius: 8px;
+            box-shadow: 1px 1px 4px var(--light-shadow);
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            height: 100%;
+
+            .dark & {
+                box-shadow: 1px 1px 4px var(--dark-shadow);
+                background: color-mix(in srgb, var(--dark-shadow), transparent 65%);
+            }
+
+            & header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            & .info { 
+                margin-top: -10px;
+                flex: 1;
+                
+                & p {
+                    font-size: .85rem;
+                }
+            }
+
+            & figure {
+                text-align: center;
+                width: auto;
+                overflow: hidden;
+
+                & img {
+                    transition: transform 1.5s, filter 1.5s ease-in-out;
+                    max-width: 100%;
+                    
+                    &:hover {
+                        transform: scale(1.8) translateY(22%) translateX(22%);
+                    }
+                }
+            }
+
+            & footer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            
+                & a {
+                    display: inline-flex;
+                    border: 1px solid var(--light-shadow);
+                    border-radius: var(--border-radius);
+                    padding: .25rem .4rem .3rem .7rem;
+                    font-size: .75rem;
+
+                    .dark & {
+                        border: 1px solid var(--dark-shadow);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (620px <= width < 790px) { 
+        ul { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }    
+    }
+</style>

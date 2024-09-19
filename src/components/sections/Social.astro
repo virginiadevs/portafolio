@@ -1,0 +1,88 @@
+---
+import { basics } from "@/data/cv.json";
+import Github from "@/icons/Github.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+
+const { email, profiles } = basics;
+const SOCIAL_ICONS: Record<string, any> = {
+    Github,
+    LinkedIn
+}
+---
+
+<footer>
+    {
+        <a href="curriculum.pdf"
+            title="Descargar CV"
+            target="_blank">
+            Descargar CV
+        </a>
+    }
+    {
+        <a href={`mailto:${email}`}
+            title="Enviar email"
+            target="_blank">
+            Enviar email &nbsp; <Mail />
+        </a>
+    }
+    {
+        profiles.map(({ network, url }) => {
+            const Icon = SOCIAL_ICONS[network]
+
+            return (
+                <a href={url} 
+                title={`Visitar perfil de ${network}`}
+                target="_blank">
+                    {network} &nbsp; <Icon />
+                </a>
+            )
+
+        })
+    }
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        & a {
+            --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
+            --gradient-light: linear-gradient(var(--light-bgcolor), var(--light-bgcolor)) padding-box;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-textcolor);
+            background: var(--gradient-light), var(--gradient);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: .25rem 0 .3rem;
+            font-size: 0.8rem;
+            width: 110px;
+
+            &:hover {
+                color: var(--light-bgcolor);
+            }
+        }
+    }
+
+    :global(.dark) footer a {
+        --gradient-dark: linear-gradient(var(--dark-bgcolor), var(--dark-bgcolor)) padding-box;
+        background: var(--gradient-dark), var(--gradient);
+    }
+
+    footer a:hover {
+        background: var(--gradient);
+        border: 2px solid transparent;
+    }
+
+    @media (width < 500px) {
+        footer {
+            justify-content: center;
+        }
+    }
+</style>

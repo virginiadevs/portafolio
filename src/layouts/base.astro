@@ -1,0 +1,143 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Tags para la preview -->
+		<meta property="og:title" content={title}>
+		<meta property="og:image" content="/captura-portafolio.webp">
+		<meta property="og:description" content="This is just an example page.">
+		<meta property="og:url" content="https://example.com/page.html"> <!-- PONER MI GITHUB PAGES -->
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+        --brand-color1: #1A8359;
+        --brand-color2: #86C337;
+
+		--dark-tcolor: #333;
+		--light-tcolor: #666;
+		--lighter-tcolor: #ccc;
+
+		--border-radius: 16px;
+		--box-shadow: 0 1px 3px 0 #0000001a;
+
+		--dark-bgcolor: #20252c;
+		--light-bgcolor: #fff;
+    }
+
+	html {
+		font-family: system-ui, sans-serif;
+	}
+
+	html.dark {
+		background-color: var(--dark-bgcolor);
+		color: var(--light-bgcolor);
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	body, figure {
+		margin: 0;
+		padding: 0;
+	}
+
+	a, small {
+		text-decoration: none;
+		color: var(--light-tcolor);
+
+		.dark & {
+			color: var(--lighter-tcolor);
+		}
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	h1, h2, h3, h4 {
+		margin: 0;
+		font-family: 
+			system-ui, 
+			-apple-system, 
+			BlinkMacSystemFont, 
+			'Segoe UI', 
+			Roboto, 
+			Oxygen, 
+			Ubuntu, 
+			Cantarell, 
+			'Open Sans', 
+			'Helvetica Neue', 
+			sans-serif;
+	}
+
+	h2, h3 {
+		color: var(--dark-tcolor);
+
+		.dark & {
+			color: var(--lighter-tcolor);
+		}
+	}
+
+	h2 { font-weight: 600 !important; }
+
+	h3 {
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	h4 {
+		color: var(--light-tcolor);
+        font-size: .8rem;
+		font-weight: 400;
+
+		.dark & {
+			color: var(--lighter-tcolor);
+		}
+	}
+
+	p {
+		color: var(--dark-tcolor);
+		font-size: 0.9rem;
+		font-weight: 300;
+		line-height: 1.5;
+		margin: 0;
+		text-wrap: pretty;
+
+		.dark & {
+			color: var(--lighter-tcolor);
+		}
+	}
+</style>
