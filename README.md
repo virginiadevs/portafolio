@@ -4,6 +4,7 @@
   <a href="https://virginiadevs.github.io/portafolio">
     <img src="./public/portafolio.webp">
   </a>
+  <p></p>
 </div>
 
 <div align="center">
