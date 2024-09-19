@@ -2,7 +2,7 @@
   "basics": {
     "name": "Virginia Calvo",
     "label": "Desarrolladora Web Junior",
-    "image": "src/img/me.webp",
+    "image": "img/me.webp",
     "email": "virginiacalvopenin@gmail.com",
     "phone": "618188647",
     "availability": 1,
@@ -181,7 +181,7 @@
     {
       "name": "Cardiopatch",
       "company": "Trilogic",
-      "image": "src/img/proyecto-cardiopatch.webp",
+      "image": "img/proyecto-cardiopatch.webp",
       "isActive": true,
       "description": "Página web sobre cardiología, desarrollada en WordPress, con campos personalizados, código CSS y jQuery.",
       "keywords": [
@@ -195,7 +195,7 @@
     {
       "name": "Pantallas Táctiles",
       "company": "Trilogic",
-      "image": "src/img/proyecto-pantallas-tactiles.webp",
+      "image": "img/proyecto-pantallas-tactiles.webp",
       "isActive": true,
       "description": "Ecommerce destinado a la venta de pantallas interactivas y accesorios, desarollada con WordPress, WooCommerce, código CSS y jQuery personalizados.",
       "keywords": [
