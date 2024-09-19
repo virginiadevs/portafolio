@@ -1,0 +1,129 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+        --brand-color1: #1A8359;
+        --brand-color2: #86C337;
+		--brand-color3: #C7EEC7;
+
+		--dark-tcolor: #333;
+		--light-tcolor: #666;
+		--lighter-tcolor: #bbb;
+
+		--width: 1000px;
+
+		--border-radius: 12px;
+		--box-shadow: 0 1px 3px 0 #0000001a;
+
+		--dark-bgcolor: #20252c;
+		--light-bgcolor: #fff;
+
+		--light-shadow: #e6e6e6;
+        --dark-shadow: #404a59;
+    }
+
+	html {
+		font-family: system-ui, sans-serif;
+	}
+
+	html.dark {
+		background-color: var(--dark-bgcolor);
+		color: var(--light-bgcolor);
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	body, figure {
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--dark-tcolor);
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	h1, h2, h3, h4 {
+		margin: 0;
+		font-family: 
+			system-ui, 
+			-apple-system, 
+			BlinkMacSystemFont, 
+			'Segoe UI', 
+			Roboto, 
+			Oxygen, 
+			Ubuntu, 
+			Cantarell, 
+			'Open Sans', 
+			'Helvetica Neue', 
+			sans-serif;
+	}
+
+	h1, h2, h3, h4 { font-weight: 600; }
+	h2 { font-size: 1.6rem; }
+	h3 { font-size: 1.1rem; }
+	
+	h4 {
+		font-size: .9rem;
+		color: var(--light-tcolor);
+	}
+
+	h4, a {
+		.dark & {
+			color: var(--brand-color3);
+		}
+	}
+
+	p {
+		color: var(--dark-tcolor);
+		font-size: 1.2rem;
+		font-weight: 300;
+		line-height: 1.5;
+		margin: 0;
+		text-wrap: pretty;
+
+		.dark & {
+			color: var(--lighter-tcolor);
+		}
+	}
+</style>

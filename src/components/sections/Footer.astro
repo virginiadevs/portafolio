@@ -1,0 +1,73 @@
+---
+import { basics } from "@/data/data.json";
+import Section from "@/components/Section.astro";
+
+const { name, label } = basics;
+const logo = "src/img/logo.webp";
+---
+
+<Section>
+    <footer>
+        <div class="contact">
+            <figure>
+                <img src={logo} alt="VirginiaDevs logo">
+            </figure>
+
+            <div class="info">
+                <p class="title">{name}</p>
+                <p class="subtitle">{label}</p>    
+            </div>
+        </div>
+
+        <span>Creada con ♥ desde Galicia</span>
+    </footer>
+</Section>
+
+<style>
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+
+        margin-bottom: -7rem;
+        padding-block: 2rem;
+
+        & .contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+
+            & figure {
+                width: 40px;
+
+                & img {
+                    width: 100%;
+                    background: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            & .title {
+                font-weight: 600;
+            }
+
+            & .subtitle {
+                font-weight: 400;
+                font-size: .85rem;
+            }
+        }
+
+        & span {
+            font-size: .75rem;
+            padding: .15rem .8rem .3rem;
+            border-radius: var(--border-radius);
+            background: color-mix(in srgb, var(--brand-color3), transparent 65%);
+
+            .dark & {
+                background: color-mix(in srgb, var(--dark-shadow), transparent 65%);
+            }
+        }
+    }
+</style>

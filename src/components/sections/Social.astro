@@ -1,0 +1,54 @@
+---
+import { basics } from "@/data/data.json";
+import File from "@/icons/File.astro";
+import Github from "@/icons/Github.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+
+const { email, profiles } = basics;
+const SOCIAL_ICONS: Record<string, any> = {
+    Github,
+    LinkedIn
+}
+---
+
+<footer>
+    {
+        <a href="https://virginiadevs.github.io/portafolio"
+            title="Ver portafolio"
+            target="_blank">
+            <File />&nbsp;Portafolio
+        </a>
+    }
+    {
+        profiles.map(({ network, url }) => {
+            const Icon = SOCIAL_ICONS[network]
+
+            return (
+                <a href={url} 
+                title={`Visitar perfil de ${network}`}
+                target="_blank">
+                    <Icon />&nbsp;{network}
+                </a>
+            )
+
+        })
+    }
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+
+        & a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .4rem .6rem;
+
+            &:hover { background: var(--light-shadow); }
+            .dark &:hover { background: var(--dark-shadow); }
+        }
+    }
+</style>
