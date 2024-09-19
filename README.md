@@ -8,6 +8,7 @@
   <a href="https://virginiadevs.github.io/portafolio">
     <img src="">
   </a>
+  <p></p>
 </div>
 
 <div align="center">
