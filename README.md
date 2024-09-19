@@ -1,10 +1,13 @@
 # virginiadevs.github.io
 
+<div>
+  <p>Mi web de proyectos</p>
+</div>
+
 <div align="center">
   <a href="https://virginiadevs.github.io/portafolio">
     <img src="">
   </a>
-  <p>Mi web de proyectos</p>
 </div>
 
 <div align="center">
