@@ -1,0 +1,9 @@
+@media (width > 480px) {
+    .nav-mobile { display: none; }
+    .nav-desktop { display: flex; }
+    /*section { margin: 0 2rem 3rem; }*/
+}
+
+@media (width > 768px) {
+    /*section { margin: 0 6rem 4rem; }*/
+}
