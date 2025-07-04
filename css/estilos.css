@@ -7,16 +7,25 @@
 :root {
     --brand-color1: #1a8359;
     --brand-color2: #86c337;
-    --dark-grey: #666;
-    --light-grey: #eee;
+    --dark-grey: light-dark(#666, #aaa);
+    --light-grey: light-dark(#eee, #404a59);
+    --background-color: light-dark(#fff, #20252c);
     --border-radius: 12px;
-    --box-shadow: 1px 1px 4px #0000001a;
+    --light-shadow: 1px 1px 4px #0000001a;
+    --dark-shadow: 1px 1px 4px #404a59;
+
+    color-scheme: light dark;
 }
 
-body { font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif; }
+.dark { color-scheme: dark; }
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+}
 
 main {
-    max-width: 1500px;
+    max-width: 1300px;
     margin: auto;
 }
 
@@ -24,10 +33,27 @@ a {
     text-decoration: none;
     color: #000;
 }
+/* ----------- */
 
-/* Secciones */
-#sobre-mi, #servicios, #proyectos, #opiniones, #blog {
-    margin: 2rem 10rem;
+/* NAV DE MODO CLARO/OSCURO */
+main { position: relative; }
+
+nav {
+    width: fit-content;
+    position: sticky;
+    top: 2vh;
+    right: 2vh;
+    margin-left: auto;
+    z-index: 1;
+
+    & #themeToggle {
+        border: 0;
+        background: none;
+        cursor: pointer;
+
+        & .sun { fill: light-dark(#000, transparent); }
+        & .moon { fill: light-dark(transparent, #fff); }
+    }
 }
 /* ----------- */
 
@@ -43,6 +69,7 @@ section {
         font-weight: 600;
         margin-bottom: 2rem;
         text-align: center;
+        color: light-dark(#000, #fff);
     }
 
     & h3 {
@@ -72,6 +99,17 @@ section {
     & .texto {
         margin-left: 4rem;
 
+        & figure {
+            width: 40px;
+            background-color: #fff;
+            border: 1px solid var(--light-grey);
+            border-radius: 50%;
+            padding: 3px 3px 0;
+            margin-bottom: .5rem;
+
+            & img { width: 100%; }
+        }
+
         & h1 {
             font-size: 2rem;
             font-weight: 600;
@@ -97,15 +135,16 @@ section {
 
             & a {
                 --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
-                --gradient-light: linear-gradient(#fff, #fff) padding-box;
+                --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
                 display: inline-flex;
                 align-items: baseline;
                 justify-content: center;
                 gap: .5rem;
                 background: var(--gradient-light), var(--gradient);
+                color: light-dark(#000, #fff);
                 border: 2px solid transparent;
                 border-radius: var(--border-radius);
-                box-shadow: var(--box-shadow);
+                box-shadow: var(--light-shadow);
                 padding: .3rem 0 .4rem;
                 font-size: .8rem;
                 width: 110px;
@@ -120,7 +159,7 @@ section {
 
     /* Imagen */
     & .imagen-con-overlay {
-        width: 400px;
+        width: min(100%, 400px);
         position: relative;
         display: inline-block;
 
@@ -153,16 +192,21 @@ section {
 
     & article {
         border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
+        box-shadow: var(--light-shadow);
         padding: 1rem;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        transition: 1s ease;
+        transition: background .3s ease-in-out;
+
+        .dark & {
+            box-shadow: var(--dark-shadow);
+            background: color-mix(in srgb, #404a59, transparent 65%);
+        }
 
         &:hover {
             cursor: pointer;
-            box-shadow: 1px 1px 4px #1a835993;
+            box-shadow: 1px 1px 4px var(--brand-color2);
         }
 
         &:hover img { filter: grayscale(0%); }
@@ -194,10 +238,14 @@ section {
                 font-size: .8rem;
                 color: var(--dark-grey);
                 margin-top: 1rem;
-                background-color: #fff;
 
                 &:hover {
-                    border-color: #86c33793;
+                    /*border-color: var(--brand-color1);*/
+                    box-shadow: var(--light-shadow);
+                }
+
+                .dark &:hover {
+                    box-shadow: var(--dark-shadow);
                 }
             }
         }
@@ -210,10 +258,9 @@ section {
     display: flex;
     justify-content: center;
     gap: .5rem;
-    background-color: var(--light-grey);
     padding: 2rem 0;
 
-    & img { width: 55px; }
+    & img { width: 50px; }
 
     & .texto {
         align-self: flex-end;

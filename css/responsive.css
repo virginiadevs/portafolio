@@ -1,9 +1,22 @@
-@media (width > 480px) {
-    .nav-mobile { display: none; }
-    .nav-desktop { display: flex; }
-    /*section { margin: 0 2rem 3rem; }*/
+@media (width < 900px) {
+    /* SOBRE MI */
+    #sobre-mi {
+        grid-template-columns: 1fr;
+
+        /* Texto */
+        & .texto {
+            margin: 0 5vw 0 10vw;
+        }
+    }
 }
 
-@media (width > 768px) {
-    /*section { margin: 0 6rem 4rem; }*/
+@media (width < 480px) {
+    /* SOBRE MI */
+    #sobre-mi {
+        
+        /* Texto */
+        & .texto {
+            margin: 0;
+        }
+    }
 }
