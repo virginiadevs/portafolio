@@ -1,12 +1,13 @@
 @media (width < 900px) {
+    section { margin-bottom: 2rem; }
+
     /* SOBRE MI */
     #sobre-mi {
         grid-template-columns: 1fr;
+        gap: 3rem;
 
         /* Texto */
-        & .texto {
-            margin: 0 5vw 0 10vw;
-        }
+        & .info { margin: 0 5vw 0 10vw; }
     }
 }
 
@@ -15,8 +16,6 @@
     #sobre-mi {
         
         /* Texto */
-        & .texto {
-            margin: 0;
-        }
+        & .info { margin: 0; }
     }
 }
