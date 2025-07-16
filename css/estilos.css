@@ -16,6 +16,8 @@
     color-scheme: light dark;
 }
 
+html { scroll-behavior: smooth; }
+
 .dark { color-scheme: dark; }
 
 body {
@@ -37,9 +39,9 @@ a {
 /* NAV DE MODO CLARO/OSCURO */
 nav {
     width: fit-content;
-    position: sticky;
+    position: fixed;
     top: 2vh;
-    right: 2.5vh;
+    right: 3vh;
     margin-left: auto;
     z-index: 1;
 
@@ -47,9 +49,11 @@ nav {
         border: 0;
         background: none;
         cursor: pointer;
+        transition: transform .5s ease;
 
         & .sun { fill: light-dark(#000, transparent); }
         & .moon { fill: light-dark(transparent, #fff); }
+        &:hover { transform: scale(1.2); }
     }
 }
 /* ----------- */
@@ -223,35 +227,30 @@ section {
         justify-content: center;
 
         & article {
-            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             background: color-mix(in srgb, var(--light-grey), transparent 65%);
             padding: 1rem;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            transition: background .3s ease-out;
 
             &:hover { box-shadow: 1px 1px 4px var(--brand-color2); }
 
             /* Foto proyecto */
-            &:hover img { filter: grayscale(0%); }
+            &:hover img { opacity: 1; }
 
-            & a img {
+            & img {
                 width: 100%;
-                height: 200px;
+                aspect-ratio: 16 / 9;
                 object-fit: cover;
-                object-position: top;
-                border-radius: var(--border-radius);
-                filter: grayscale(100%);
-                transition: 1s ease; 
+                opacity: .7;
+                transition: opacity 1s ease;
             }
+
+            /* Texto */
+            & header { margin: .5rem; }
+            & p { margin-bottom: 1rem; }
 
             /* Tecnologías */
             & .tecnologias { display: none; }
-
-            /* Descripción */
-            & p { margin: 1rem 0; }
 
             /* Enlaces */
             & footer {
@@ -266,11 +265,30 @@ section {
                     padding: .25rem .75rem;
                     font-size: .8rem;
                     color: var(--dark-grey);
-                    margin-top: 1rem;
 
                     &:hover { box-shadow: var(--box-shadow); }
                 }
             }
+        }
+    }
+
+    /* Flecha arriba */
+    & aside {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+
+        & a {
+            color: #fff;
+            background-color: var(--brand-color1);
+            box-shadow: 1px 1px 4px #404a59;
+            border: none;
+            border-radius: 50%;
+            padding: .5rem .75rem;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+
+            &:hover { background-color: var(--brand-color2); }
         }
     }
 }
@@ -285,8 +303,21 @@ section {
     gap: .5rem;
     padding: 2rem;
 
-    & img { width: 50px; }
+    /* Animación corazón */
+    & .izquierda i {
+        padding: 0 3px;
+        &:hover { animation: heartbeat 2s infinite; }
+    }
 
+    /* Logo */
+    & img {
+        width: 50px;
+        transition: transform .5s ease;
+
+        &:hover { transform: scale(1.2); }
+    }
+
+    /* Enlaces */
     & .derecha {
         display: flex;
         flex-wrap: wrap;
@@ -320,4 +351,16 @@ section {
             }
         }
     }
+}
+/* ----------- */
+
+/* ANIMACIONES */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
