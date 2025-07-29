@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virginia Calvo | Desarrolladora web</title>
     <meta name="author" content="VirginiaDevs">
+    <meta name="description" content="Virginia, desarrolladora web">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
@@ -13,11 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Mis estilos -->
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <nav>
+    <nav id="switch-nav">
         <button id="themeToggle" aria-label="Dark Mode Switch">
             <svg width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
@@ -27,124 +28,303 @@
     </nav>
 
     <main>
-        <section id="sobre-mi">
-            <div class="info">
-                <figure><img src="img/logo.png" alt="Logo de VirginiaDevs" class="logo"></figure>
-                <h1>Virginia Calvo</h1>
-                <h2>Desarrolladora web</h2>
-                <small><i class="fa-solid fa-location-dot"></i> Ourense, España</small>
-                <p>Cuento con 2 años de esperiencia en el desarrollo de páginas web, tiendas online y aplicaciones web. Me especializo en el diseño frontend porque me apasiona crear interfaces atractivas y funcionales utilizando CSS y JS nativos.</p>
+        <aside>
+            <div class="sidebar-me">
+                <figure>
+                    <img src="img/logo.png" alt="">
+                </figure>
 
-                <div class="enlaces">
-                    <a href="https://virginiadevs.github.io/portafolio/" target="_blank" title="Ver portafolio">Portafolio <i class="far fa-address-card fa-lg"></i></a>
-                    <a href="github.com/virginiadevs" target="_blank" title="Visitar perfil de Github">Github <i class="fa-brands fa-github fa-lg"></i></a>
-                    <a href="linkedin.com/in/virginiacalvo" target="_blank" title="Visitar perfil de LinkedIn">LinkedIn <i class="fa-brands fa-linkedin fa-lg"></i></a>
+                <div class="me-content">
+                    <h1>Virginia Calvo</h1>
+                    <p>Desarrolladora web</p>
                 </div>
             </div>
 
-            <div class="imagen-con-overlay">
-                <img src="img/chica.jpg" alt="Dibujo">
-            </div>
-        </section>
+            <div class="separator"></div>
 
-        <section id="proyectos">
-            <h2>Proyectos destacados</h2>
+            <div class="sidebar-info">
+                <ul class="contacts-list">
+                    <li class="list-item">
+                        <div class="icon-box">
+                            <i class="far fa-envelope fa-lg"></i>
+                        </div>
 
-            <div class="filtros">
-                <button id="allFilter" class="checked">Todos</button>
-                <button id="jsFilter">JS</button>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="#contact" class="contact-link" title="Ir a la sección de contacto">virginiacalvopenin@gmail.com</a>
+                        </div>
+                    </li>
+
+                    <li class="list-item">
+                        <div class="icon-box">
+                            <i class="fas fa-location-dot fa-lg"></i>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Ubicación</p>
+                            <span>Ourense, España</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="separator"></div>
+
+                <ul class="social-list">
+                    <li class="list-item"><a href="" target="_blank" title="Descargar CV en PDF">
+                        <div class="icon-box">
+                            <i class="far fa-file-lines fa-xl"></i>
+                        </div>
+                    </a></li>
+
+                    <li class="list-item"><a href="" target="_blank" title="Visitar perfil de Github">
+                        <div class="icon-box">
+                            <i class="fa-brands fa-github fa-xl"></i>
+                        </div>
+                    </a></li>
+
+                    <li class="list-item"><a href="" target="_blank" title="Visitar perfil de LinkedIn">
+                        <div class="icon-box">
+                            <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </div>
+                    </a></li>
+                </ul>
             </div>
-            
-            <div class="destacados">
+        </aside>
+
+        <div class="main-content">
+            <nav id="menu-nav">
+                <a href="#about">Sobre mí</a>
+                <a href="#cv">Currículum</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+
+            <section id="about" class="active">
+                <header>
+                    <h2>Sobre mí</h2>
+
+                    <div class="separator"></div>
+                </header>
+
                 <article>
-                    <img src="img/chica.jpg" alt="Imagen de We Love Run">
+                    <p>Cuento con 2 años de experiencia en el desarrollo de páginas web, tiendas online y aplicaciones web. Me especializo en el diseño frontend porque me apasiona crear interfaces atractivas y funcionales utilizando CSS y JS nativos.</p>
+                    <p><strong>No soy freelance</strong>. Busco bla bla bla...</p>
+                </article>
 
-                    <header><h3>We ❤︎ Run</h3></header>
-    
-                    <div class="tecnologias">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>javascript</span>
+                <article>
+                    <h3>Metodología</h3>
+
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <div class="icon-box">
+                                <i class="far fa-file-lines fa-xl"></i>
+                            </div>
+
+                            <div class="service-content">
+                                <h4>Desarrollo web</h4>
+                                <p>Diseño flexible, moderno y centrado en la accesibilidad y el rendimiento.</p>
+                            </div>
+                        </li>
+
+                        <li class="service-item">
+                            <div class="icon-box">
+                                <i class="far fa-file-lines fa-xl"></i>
+                            </div>
+
+                            <div class="service-content">
+                                <h4>Diseño responsive</h4>
+                                <p>Desarrollo de sitios web adaptables a cualquier dispositivo, garantizando una experiencia de usuario óptima.</p>
+                            </div>
+                        </li>
+
+                        <li class="service-item">
+                            <div class="icon-box">
+                                <i class="far fa-file-lines fa-xl"></i>
+                            </div>
+
+                            <div class="service-content">
+                                <h4>Posicionamiento SEO</h4>
+                                <p>Implementación de buenas prácticas de SEO técnico y de contenido para atraer tráfico orgánico y aumentar tu presencia online.</p>
+                            </div>
+                        </li>
+
+                        <li class="service-item">
+                            <div class="icon-box">
+                                <i class="far fa-file-lines fa-xl"></i>
+                            </div>
+
+                            <div class="service-content">
+                                <h4>Mantenimiento y soporte</h4>
+                                <p>Actualizaciones, correcciones y mejoras técnicas, además de asistencia personalizada ante cualquier incidencia.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="cv">
+                <header>
+                    <h2>Currículum</h2>
+
+                    <div class="separator"></div>
+                </header>
+
+                <article class="timeline">
+                    <div class="timeline-title">
+                        <div class="icon-box">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+
+                        <h3>Experiencia</h3>
                     </div>
 
-                    <p>Tienda online de moda deportiva.</p>
-                    
-                    <footer>
-                        <a href="#" target="_blank" title="Visitar web de We Love Run">
-                            <i class="fa-solid fa-link"></i> Web
-                        </a>
-                    </footer>
-                </article>
-    
-                <article>
-                    <img src="img/chica.jpg" alt="Imagen de GatoManía">
-
-                    <header><h3>GatoManía</h3></header>
-
-                    <div class="tecnologias">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>javascript</span>
-                    </div>
-    
-                    <p>Página web sobre gatos.</p>
-    
-                    <footer>
-                        <a href="#" target="_blank" title="Visitar web de GatoManía">
-                            <i class="fa-solid fa-link"></i> Web
-                        </a>
-                    </footer>
+                    <ol class="timeline-list">
+                        <li class="timeline-item">
+                            <h4>Desarrollo web fullstack</h4>
+                            <span>Trilogic | 2019 - 2021</span>
+                            <p>Diseño de páginas web y tiendas online con WordPress, código CSS y jQuery personalizados. Desarrollo de aplicaciones web mediante HTML, CSS, Bootstrap, jQuery y PHP (CodeIgniter 3). Desarrollo de aplicaciones para Alexa en Node.js.</p>
+                        </li>
+                    </ol>
                 </article>
 
-                <article>
-                    <img src="img/chica.jpg" alt="Imagen de Sabor Casero">
+                <article class="timeline">
+                    <div class="timeline-title">
+                        <div class="icon-box">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
 
-                    <header><h3>Sabor Casero</h3></header>
-
-                    <div class="tecnologias">
-                        <span>html</span>
-                        <span>css</span>
+                        <h3>Formación</h3>
                     </div>
 
-                    <p>Página web de recetas tradicionales.</p>
-    
-                    <footer>
-                        <a href="#" target="_blank" title="Visitar web de Sabor Casero">
-                            <i class="fa-solid fa-link"></i> Web
-                        </a>
+                    <ol class="timeline-list">
+                        <li class="timeline-item">
+                            <h4>Especialización en ciberseguridad</h4>
+                            <span>Uni Eibar-Ermua | 2019 - 2020</span>
+                        </li>
 
-                        <a href="#" target="_blank" title="Ver el código de Sabor Casero">
-                            <i class="fa-solid fa-link"></i> Código
-                        </a>
-                    </footer>
+                        <li class="timeline-item">
+                            <h4>Desarrollo de aplicaciones web</h4>
+                            <span>Uni Eibar-Ermua | 2018 - 2019</span>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4>Desarrollo de aplicaciones multiplataforma</h4>
+                            <span>Uni Eibar-Ermua | 2012 - 2015</span>
+                        </li>
+                    </ol>
                 </article>
-            </div>
 
-            <aside>
-                <a href="#proyectos" aria-label="Botón para volver al inicio de la web">
-                    <i class="fas fa-arrow-up"></i>
-                </a>
-            </aside>
-        </section>
+                <article class="skills">
+                    <h3>Tecnologías</h3>
+
+                    <ul class="skill-list">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML logo"> <span>HTML</span></li>
+                        <li><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg" alt="CSS logo"> <span>CSS</span></li>
+                        <li><img src="https://www.svgrepo.com/show/452045/js.svg" alt="Javascript logo"> <span>Javascript</span></li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery logo"> <span>jQuery</span></li>
+                        <li><img src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP logo"> <span>PHP</span></li>
+                        <li><img src="https://www.svgrepo.com/show/475696/wordpress-color.svg" alt="WordPress logo"> <span>WordPress</span></li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="portfolio">
+                <header>
+                    <h2>Portafolio</h2>
+
+                    <div class="separator"></div>
+                </header>
+
+                <div class="filter-list">
+                    <button class="filter-item" id="allFilter" class="checked">Todos</button>
+                    <button class="filter-item" id="jsFilter">JS</button>
+                </div>
+                
+                <div class="featured">
+                    <article>
+                        <img src="img/chica.jpg" alt="Imagen de We Love Run">
+
+                        <header><h3>We ❤︎ Run</h3></header>
+        
+                        <div class="tecnologias">
+                            <span>html</span>
+                            <span>css</span>
+                            <span>javascript</span>
+                        </div>
+
+                        <p>Tienda online de moda deportiva.</p>
+                        
+                        <footer>
+                            <a href="#" target="_blank" title="Visitar web de We Love Run">
+                                <i class="fa-solid fa-link"></i> Web
+                            </a>
+                        </footer>
+                    </article>
+        
+                    <article>
+                        <img src="img/chica.jpg" alt="Imagen de GatoManía">
+
+                        <header><h3>GatoManía</h3></header>
+
+                        <div class="tecnologias">
+                            <span>html</span>
+                            <span>css</span>
+                            <span>javascript</span>
+                        </div>
+        
+                        <p>Página web sobre gatos.</p>
+        
+                        <footer>
+                            <a href="#" target="_blank" title="Visitar web de GatoManía">
+                                <i class="fa-solid fa-link"></i> Web
+                            </a>
+                        </footer>
+                    </article>
+
+                    <article>
+                        <img src="img/chica.jpg" alt="Imagen de Sabor Casero">
+
+                        <header><h3>Sabor Casero</h3></header>
+
+                        <div class="tecnologias">
+                            <span>html</span>
+                            <span>css</span>
+                        </div>
+
+                        <p>Página web de recetas tradicionales.</p>
+        
+                        <footer>
+                            <a href="#" target="_blank" title="Visitar web de Sabor Casero">
+                                <i class="fa-solid fa-link"></i> Web
+                            </a>
+
+                            <a href="#" target="_blank" title="Ver el código de Sabor Casero">
+                                <i class="fa-solid fa-link"></i> Código
+                            </a>
+                        </footer>
+                    </article>
+                </div>
+
+                <div class="arriba">
+                    <a href="#proyectos" aria-label="Botón para volver al inicio de la web">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section id="contact">
+                <header>
+                    <h2>Contacto</h2>
+
+                    <div class="separator"></div>
+                </header>
+
+                <form action="#" class="contact-form">
+
+                </form>
+            </section>
+        </div>
     </main>
-
-    <footer id="footer">
-        <div class="izquierda">
-            <small>© 2025 <strong>virginiadevs</strong>. Desarrollado con <i class="fas fa-heart"></i></small>
-        </div>
-
-        <div class="centro">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo de VirginiaDevs" class="logo">
-            </a>
-        </div>
-
-        <div class="derecha">
-            <a href="https://virginiadevs.github.io/portafolio/" target="_blank" title="Ver portafolio">Portafolio</a>
-            <a href="github.com/virginiadevs" target="_blank" title="Visitar perfil de Github">Github</a>
-            <a href="linkedin.com/in/virginiacalvo" target="_blank" title="Visitar perfil de LinkedIn">LinkedIn</a>
-        </div>
-    </footer>
 
     <!-- Funciones -->
     <script src="js/funciones.js"></script>
