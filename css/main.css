@@ -34,6 +34,10 @@ a {
     color: var(--black-white);
 }
 
+p {
+    font-size: 13px;
+}
+
 ul, ol { list-style: none; }
 /* ----------- */
 
@@ -83,6 +87,8 @@ main {
     border: 1px solid var(--light-grey);
     padding: 1rem;
 }
+
+.main-content { padding: 1.5rem 2rem; }
 /* ----------- */
 
 /* ASIDE */
@@ -185,10 +191,10 @@ main {
 
     & .info_more-btn {
         position: absolute;
-        bottom: 5px;
+        top: 5px;
         right: 5px;
         border: 1px solid var(--light-grey);
-        border-radius: 10px 0;
+        border-radius: 0 10px;
         font-size: 12px;
         color: light-dark(var(--brand-color1), var(--brand-color2));
         background: var(--background-color);
@@ -230,7 +236,8 @@ main {
         position: fixed;
         bottom: 0; left: 0;
         width: 100%;
-        background-color: var(--light-grey);/* poner el background con la transparencia, mirar en el portafolio */
+        background-color: #aaaaaa4d;
+        backdrop-filter: blur(10px);
         border-radius: var(--border-radius) var(--border-radius) 0 0;
         padding: .7rem .1rem .5rem;
         z-index: 5;
@@ -238,10 +245,11 @@ main {
         & .navbar-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: center;
+            gap: 10px;
         
             & a {
-                font-size: .8rem;
+                font-size: 13px;
                 font-weight: 500;
             }
 
@@ -290,14 +298,10 @@ main {
 
 /* Section: ABOUT ME */
 #about {
-    & p {
-        margin-bottom: 1rem;
-    }
-
     & .service-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
 
         & .service-item {
             display: flex;
@@ -305,7 +309,7 @@ main {
             gap: 5px;
             align-items: center;
             text-align: center;
-            padding: 1rem;
+            padding: .9rem 1.2rem 1rem;
             box-shadow: var(--box-shadow);
 
             & .icon-box {
@@ -320,6 +324,8 @@ main {
 /* Section: CURRICULUM */
 #cv {
     & .timeline {
+        margin-bottom: 2rem;
+
         & .timeline-title {
             display: flex;
             gap: 1rem;
@@ -338,26 +344,29 @@ main {
 
         & .timeline-item {
             position: relative;
+            margin-left: -9px;
 
             &:not(:last-child) {
                 margin-bottom: 20px;
 
+                /* Grey line */
                 &::before {
                     content: "";
                     position: absolute;
                     top: -25px;
-                    left: -48px;
+                    left: -38px;
                     width: 1px;
                     height: calc(100% + 50px);
-                    background-color: var(--dark-grey);
+                    background-color: var(--light-grey);
                 }
             }            
 
+            /* Green dots */
             &::after {
                 content: "";
                 position: absolute;
-                top: 5px;
-                left: -51px;
+                top: 7px;
+                left: -42px;
                 height: 8px;
                 width: 8px;
                 background: linear-gradient(to right, var(--brand-color2), var(--brand-color1));
@@ -372,7 +381,7 @@ main {
 
             & .task-list {
                 & .task {
-                    font-size: .8rem;
+                    font-size: 13px;
                     margin-top: .5rem;
                 }
             }
@@ -382,8 +391,8 @@ main {
     & .skill-list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 2rem;
+        justify-content: center;
+        gap: 1rem;
 
         & .skill-item {
             display: flex;
@@ -409,8 +418,7 @@ main {
         margin: 1.2rem 0 1rem;
 
         & .filter-item {
-            font-size: .8rem;
-            font-weight: 600;
+            font-size: 13px;
             border: none;
             background-color: transparent;
             cursor: pointer;
@@ -425,8 +433,8 @@ main {
 
     & .featured {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
 
         & article {
             display: flex;
@@ -441,7 +449,7 @@ main {
 
             & .project-img {
                 width: 100%;
-                height: auto;
+                height: 200px;
                 border-radius: var(--border-radius);
                 overflow: hidden;
 
@@ -454,7 +462,7 @@ main {
             }
 
             & h3 {
-                font-size: .9rem;
+                font-size: 14px;
                 font-weight: 700;
                 margin: 1rem 0 0;
             }
@@ -520,7 +528,7 @@ main {
                 margin: 10px 0;
             }
 
-            & input, select {
+            & input {
                 height: 30px;
                 width: 100%;
                 padding: 5px;

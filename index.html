@@ -410,22 +410,24 @@
                 </div>
 
                 <form action="#" class="contact-form">
-                    <div class="form-group grupo-nombre">
-                        <div class="input-group">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="nombre completo" required>
+                    <div class="contact-group">
+                        <div class="form-group grupo-nombre">
+                            <div class="input-group">
+                                <label for="nombre">Nombre: </label>
+                                <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="nombre completo" required>
+                            </div>
+                            <p class="input-error">El nombre no puede ir vacío.</p>
                         </div>
-                        <p class="input-error">El nombre no puede ir vacío.</p>
-                    </div>
 
-                    <div class="form-group grupo-email">
-                        <div class="input-group">
-                            <label for="email">Email: </label>
-                            <input type="email" id="email" name="email" autocomplete="email" placeholder="ejemplo@email.com" required>
+                        <div class="form-group grupo-email">
+                            <div class="input-group">
+                                <label for="email">Email: </label>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="ejemplo@email.com" required>
+                            </div>
+                            <p class="input-error">El email no puede ir vacío y debe tener el formato adecuado (ejemplo@email.com).</p>
                         </div>
-                        <p class="input-error">El email no puede ir vacío y debe tener el formato adecuado (ejemplo@email.com).</p>
                     </div>
-
+                    
                     <div class="form-group grupo-mensaje">
                         <div class="input-group">
                             <label for="mensaje">Mensaje: </label>

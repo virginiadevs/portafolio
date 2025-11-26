@@ -1,43 +1,121 @@
 @media (width >= 480px) {
-    /* cambiar lo de los proyectos para que rompa en este punto (tamaño imagen) */
+    main {
+        margin: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+        & #navbar .navbar-list {
+            gap: 20px;
+
+            & a {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
-@media (width >= 580px) {
+@media (width >= 582px) {
+    /* ASIDE */
+    .sidebar .info_more-btn {
+        padding-inline: 7px;
 
+        & i { display: none; }
+        & span { display: block; }
+    }
+
+    /* Section: ABOUT ME */
+    #about .service-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Section: CONTACT */
+    #contact form .contact-group {
+        display: flex;
+        gap: 1rem;
+
+        & .form-group {
+            width: 100%;
+        }
+    }
 }
 
 @media (width >= 768px) {
+    /* Section: CURRICULUM */
+    #cv .skill-list { justify-content: space-evenly; }
 
+    /* Section: PORTFOLIO */
+    #portfolio .featured article .project-img {
+        height: 100%;
+    }
 }
 
 
 @media (width >= 1024px) {
     main {
-        display: grid;
-        grid-template-columns: 500px 1fr;
-        gap: 1rem;
-
-        max-width: 1200px;
-        height: 90vh;
-
-        margin: 1rem;
-        margin-top: 3rem;
-        margin-inline: auto;
+        margin-bottom: 2rem;
     }
 
-    .sidebar, .main-content {
-        padding: 2rem;
-    }
-
-    .sidebar {
+    /* MAIN CONTENT */
+    .main-content {
+        position: relative;
         margin-inline: auto;
-        padding-inline: 3rem;
-        width: max-content;
-        height: max-content;
-        position: sticky;
+
+        & #navbar {
+            position: absolute;
+            bottom: auto;
+            top: 0;
+            left: auto;
+            right: 0;
+            width: max-content;
+            padding: .5rem 1.5rem;
+            border-radius: 0 var(--border-radius) 0 var(--border-radius);
+            background-color: var(--light-grey);
+        }
     }
 }
 
 @media (width >= 1250px) {
+    main {
+        max-width: 1200px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
+    /* ASIDE */
+    .sidebar {
+        width: auto;
+        position: sticky;
+        top: 3rem;
+        max-height: max-content;
+        height: 100%;
+        padding: 2rem;
+        z-index: 1;
+
+        & .sidebar-info {
+            flex-direction: column;
+        }
+
+        & .sidebar-info_more {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        & .info_more-btn {
+            display: none;
+        }
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+        min-width: 70%;
+        width: 70%;
+        margin-top: 1rem;
+        padding: 2rem 2rem 1rem;
+    }
 }
