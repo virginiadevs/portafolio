@@ -1,21 +1,43 @@
-@media (width < 900px) {
-    section { margin-bottom: 2rem; }
+@media (width >= 480px) {
+    /* cambiar lo de los proyectos para que rompa en este punto (tamaño imagen) */
+}
 
-    /* SOBRE MI */
-    #sobre-mi {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+@media (width >= 580px) {
 
-        /* Texto */
-        & .info { margin: 0 5vw 0 10vw; }
+}
+
+@media (width >= 768px) {
+
+}
+
+
+@media (width >= 1024px) {
+    main {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        gap: 1rem;
+
+        max-width: 1200px;
+        height: 90vh;
+
+        margin: 1rem;
+        margin-top: 3rem;
+        margin-inline: auto;
+    }
+
+    .sidebar, .main-content {
+        padding: 2rem;
+    }
+
+    .sidebar {
+        margin-inline: auto;
+        padding-inline: 3rem;
+        width: max-content;
+        height: max-content;
+        position: sticky;
     }
 }
 
-@media (width < 480px) {
-    /* SOBRE MI */
-    #sobre-mi {
-        
-        /* Texto */
-        & .info { margin: 0; }
-    }
+@media (width >= 1250px) {
+
 }
