@@ -1,23 +1,23 @@
 /* --- LIGHT/DARK MODE --- */
 const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
     }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
     }
     
-    return 'light';
+    return "light";
 })();
 
-if (theme === 'light') {
-    document.documentElement.classList.remove('dark');
+if (theme === "light") {
+    document.documentElement.classList.remove("dark");
 }
 else {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
 }
 
-window.localStorage.setItem('theme', theme);
+window.localStorage.setItem("theme", theme);
 
 const handleToggleClick = () => {
     const element = document.documentElement;
@@ -28,10 +28,19 @@ const handleToggleClick = () => {
 }
 
 document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+document.getElementById("themeSwitch").addEventListener("click", handleToggleClick);
+// ---------------------------------------------------------------------------------------
+
+/* --- SIDEBAR VIEW MORE --- */
+const sidebar = document.querySelector(".sidebar");
+const sidebarBtn = document.querySelector(".info_more-btn");
+sidebarBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
 // ---------------------------------------------------------------------------------------
 
 /* --- ACTIVE TAB --- */
-const links = document.querySelectorAll("#menu-nav a");
+const links = document.querySelectorAll("#navbar a");
 const sections = document.querySelectorAll(".main-content section");
 
 links.forEach(link => {
@@ -48,11 +57,11 @@ links.forEach(link => {
         const route = link.getAttribute("href").substring(1);
         document.getElementById(route).classList.add("active");
 
-        window.scrollTo(0, 0); 
+        //window.scrollTo(0, 0); 
     });
 });
 
-/* Change to email tab on clicking email */
+/* Change to email tab on clicking email 
 const email = document.querySelector(".contact-link");
 email.addEventListener("click", e => {
     e.preventDefault();
@@ -61,7 +70,7 @@ email.addEventListener("click", e => {
     // Adds 'active' class to the contact tab and section
     document.querySelector("#menu-nav .contactTab").classList.add("active");
     document.querySelector(".main-content #contact").classList.add("active");
-});
+});*/
 
 /* FUNCTION: to remove active tabs and sections */
 function removeActive() {
