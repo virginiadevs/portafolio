@@ -34,7 +34,7 @@ a {
     color: var(--black-white);
 }
 
-p {
+p, span {
     font-size: 13px;
 }
 
@@ -72,10 +72,8 @@ main {
 .icon-box {
     border: 1px solid var(--light-grey);
     border-radius: var(--border-radius);
-    
-    width: 48px;
-    height: 48px;
-    
+    width: 38px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,6 +143,10 @@ main {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
+
+            & .icon-box {
+                background: var(--background-color);
+            }
         }
 
         & .contacts-list .list-item, .social-list .list-item a {
@@ -158,14 +160,6 @@ main {
                 font-size: .85rem;
                 font-weight: 500;
             }
-
-            & .contact-link {
-                display: inline-block;
-                width: 220px;
-                margin-left: -5px;
-
-                & img { width: 100%; }
-            }
         }
 
         & .social-list {
@@ -178,6 +172,8 @@ main {
                 --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
                 background: var(--gradient-light), var(--gradient);
                 color: var(--black-white);
+                width: 48px;
+                height: 48px;
                 border: 2px solid transparent;
                 box-shadow: var(--box-shadow);
 
@@ -292,8 +288,6 @@ main {
     }
 
     & .active { display: block; }
-
-    & img { width: 50px; }
 }
 
 /* Section: ABOUT ME */
@@ -315,7 +309,7 @@ main {
             & .icon-box {
                 border: none;
 
-                & img { width: 52px; }
+                & img { width: 45px; }
             }
         }
     }
@@ -331,8 +325,6 @@ main {
             gap: 1rem;
 
             & .icon-box {
-                width: 38px;
-                height: 38px;
                 background: var(--background-color);
                 z-index: 1;
             }
