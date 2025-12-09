@@ -71,7 +71,7 @@
             width: max-content;
             padding: .5rem 1.5rem;
             border-radius: 0 var(--border-radius) 0 var(--border-radius);
-            background-color: var(--light-grey);
+            background: color-mix(in srgb, var(--brand-color3), transparent 80%);
         }
     }
 }

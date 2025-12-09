@@ -7,12 +7,14 @@
 :root {
     --brand-color1: #1a8359;
     --brand-color2: #86c337;
+    --brand-color3: #AFDCBF;
+    --text-color1: light-dark(#20252c, #e1e5ea);
+    --text-color2: light-dark(#666, #AFDCBF);
     --border-radius: 12px;
-    --black-white: light-dark(#0f0f0f, #f1f1f1);
-    --dark-grey: light-dark(#666, #aaa);
-    --light-grey: light-dark(#eee, #404a59);
+    
+    --card-color: light-dark(#f0f2f4, #404a59);
     --background-color: light-dark(#fff, #20252c);
-    --box-shadow: 1px 1px 4px light-dark(#0000001a, #404a59);
+    --box-shadow: 1px 1px 4px light-dark(#e1e5ea, #404a59);
     
     color-scheme: light dark;
 }
@@ -25,13 +27,14 @@ body {
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     line-height: 1.5;
+    color: var(--text-color1);
     background-color: var(--background-color);
     overflow-y: scroll;
 }
 
 a {
     text-decoration: none;
-    color: var(--black-white);
+    color: var(--text-color1);
 }
 
 p, span {
@@ -70,7 +73,7 @@ main {
 }
 
 .icon-box {
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--card-color);
     border-radius: var(--border-radius);
     width: 38px;
     height: 38px;
@@ -80,9 +83,9 @@ main {
 }
 
 .sidebar, .main-content, .service-item, .featured article {
-    background: color-mix(in srgb, var(--light-grey), transparent 65%);
+    background: color-mix(in srgb, var(--card-color), transparent 65%);
     border-radius: var(--border-radius);
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--card-color);
     padding: 1rem;
 }
 
@@ -135,7 +138,7 @@ main {
         transition: .5s ease;
 
         & .separator {
-            border-bottom: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--card-color);
             margin-block: 1rem;
         }
 
@@ -156,7 +159,7 @@ main {
 
             & .contact-title {
                 text-transform: uppercase;
-                color: var(--dark-grey);
+                color: var(--text-color2);
                 font-size: .85rem;
                 font-weight: 500;
             }
@@ -171,7 +174,6 @@ main {
                 --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
                 --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
                 background: var(--gradient-light), var(--gradient);
-                color: var(--black-white);
                 width: 48px;
                 height: 48px;
                 border: 2px solid transparent;
@@ -189,7 +191,7 @@ main {
         position: absolute;
         top: 5px;
         right: 5px;
-        border: 1px solid var(--light-grey);
+        border: 1px solid var(--card-color);
         border-radius: 0 10px;
         font-size: 12px;
         color: light-dark(var(--brand-color1), var(--brand-color2));
@@ -197,6 +199,7 @@ main {
         box-shadow: var(--box-shadow);
         padding: 4px;
         z-index: 1;
+        cursor: pointer;
 
         &::before {
             content: "";
@@ -232,7 +235,7 @@ main {
         position: fixed;
         bottom: 0; left: 0;
         width: 100%;
-        background-color: #aaaaaa4d;
+        background: color-mix(in srgb, var(--brand-color3), transparent 65%);
         backdrop-filter: blur(10px);
         border-radius: var(--border-radius) var(--border-radius) 0 0;
         padding: .7rem .1rem .5rem;
@@ -351,7 +354,7 @@ main {
                     left: -38px;
                     width: 1px;
                     height: calc(100% + 50px);
-                    background-color: var(--light-grey);
+                    background-color: var(--card-color);
                 }
             }            
 
@@ -370,7 +373,7 @@ main {
 
             & span {
                 font-size: .8rem;
-                color: var(--dark-grey);
+                color: var(--text-color2);
             }
 
             & .task-list {
@@ -419,11 +422,12 @@ main {
             background-color: transparent;
             cursor: pointer;
 
-            &:hover { color: var(--dark-grey); }
+            &:hover { color: var(--text-color2); }
         }
 
         & .active, .active:hover {
             color: light-dark(var(--brand-color1), var(--brand-color2));
+            font-weight: 600;
         }
     }
 
@@ -475,13 +479,13 @@ main {
 
                 & a {
                     font-size: .75rem;
-                    color: var(--dark-grey);
+                    color: var(--text-color2);
                     padding: .25rem .75rem .3rem;
-                    border: 1px solid var(--light-grey);
+                    border: 1px solid var(--card-color);
                     border-radius: var(--border-radius);
 
                     &:hover {
-                        border: 1px solid var(--dark-grey);
+                        border: 1px solid var(--brand-color3);
                     }
                 }
             }
@@ -524,30 +528,27 @@ main {
                 margin: 10px 0;
             }
 
-            & input {
-                height: 30px;
+            & input, textarea {
                 width: 100%;
                 padding: 5px;
                 border: none;
-                border-bottom: 1px solid var(--black-white);
-                background-color: transparent;
-                margin-bottom: 5px;
+                border-bottom: 1px solid var(--brand-color3);
 
                 &:focus {
                     outline: none;
-                    border-bottom-color: var(--brand-color2);
+                    border-bottom-color: light-dark(var(--brand-color1), var(--brand-color2));
                 }
             }
 
+            & input {
+                height: 30px;
+                background-color: transparent;
+                margin-bottom: 5px;
+            }
+
             & textarea {
-                width: 100%;
                 height: 150px;
-                padding: .5rem;
-                border: none;
-                border-bottom: 1px solid var(--black-white);
-                background: color-mix(in srgb, var(--light-grey), transparent 65%);
-                
-                &:focus { outline: none; }
+                background: color-mix(in srgb, var(--card-color), transparent 65%);
             }
         }
 
