@@ -37,9 +37,7 @@ a {
     color: var(--text-color1);
 }
 
-p, span {
-    font-size: 13px;
-}
+p, span { font-size: 13px; }
 
 ul, ol { list-style: none; }
 /* ----------- */
@@ -72,6 +70,13 @@ main {
     margin-bottom: 4rem;
 }
 
+.sidebar, .main-content, .service-item, .featured article {
+    background: color-mix(in srgb, var(--card-color), transparent 65%);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--card-color);
+    padding: 1rem;
+}
+
 .icon-box {
     border: 1px solid var(--card-color);
     border-radius: var(--border-radius);
@@ -82,11 +87,17 @@ main {
     align-items: center;
 }
 
-.sidebar, .main-content, .service-item, .featured article {
-    background: color-mix(in srgb, var(--card-color), transparent 65%);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--card-color);
-    padding: 1rem;
+.social-list .list-item a .icon-box, #contact form #btnEnviar {
+    --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
+    --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
+    background: var(--gradient-light), var(--gradient);
+    border: 2px solid transparent;
+    box-shadow: var(--box-shadow);
+
+    &:hover {
+        background: var(--gradient);
+        color: #fff;
+    }
 }
 
 .main-content { padding: 1.5rem 2rem; }
@@ -121,6 +132,8 @@ main {
         }
 
         & .info-content {
+            text-align: center;
+
             & h1 {
                 font-size: 1.5rem;
                 font-weight: 600;
@@ -171,18 +184,8 @@ main {
             gap: 1rem;
 
             & .list-item a .icon-box {
-                --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
-                --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
-                background: var(--gradient-light), var(--gradient);
                 width: 48px;
                 height: 48px;
-                border: 2px solid transparent;
-                box-shadow: var(--box-shadow);
-
-                &:hover {
-                    background: var(--gradient);
-                    color: #fff;
-                }
             }
         }
     }
@@ -409,7 +412,6 @@ main {
 
 /* Section: PORTFOLIO */
 #portfolio {
-
     & .filter-list {
         display: flex;
         gap: 1rem;
@@ -557,16 +559,10 @@ main {
 
             & #btnEnviar {
                 margin-block: 1rem;
-                border: none;
-                border-radius: var(--border-radius);
-                background-color: var(--brand-color1);
-                box-shadow: 1px 1px 4px #404a59;
-                color: #fff;
                 width: fit-content;
                 padding: 12px 40px;
                 cursor: pointer;
-
-                &:hover { background-color: var(--brand-color2); }
+                border-radius: var(--border-radius);
             }
         }
 
