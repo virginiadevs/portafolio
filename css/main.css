@@ -292,6 +292,8 @@ main {
 
 /* Section: ABOUT ME */
 #about {
+    & .intro { margin-bottom: 10px; }
+
     & .service-list {
         display: grid;
         grid-template-columns: 1fr;
@@ -394,9 +396,11 @@ main {
             margin-right: 1rem;
 
             & img {
-                height: 24px;
+                height: 30px;
             }
         }
+
+        & .skill-item:last-child img { width: 50%; }
     }
 }
 
