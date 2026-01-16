@@ -13,426 +13,383 @@
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <!-- Mis estilos 
-    <link rel="stylesheet" href="css/styles.css">-->
+    <!-- Mis estilos -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- LIGHT/DARK MODE NAV -->
-    <nav id="nav-switch">
+    <!-- HEADER -->
+    <header>
         <button id="themeToggle" aria-label="Modo claro/oscuro">
-            <svg width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
                 <path class="moon" fill-rule="evenodd" d="M16.5 6A10.5 10.5 0 0 1 4.7 16.4 8.5 8.5 0 1 0 16.4 4.7l.1 1.3zm-1.7-2a9 9 0 0 1 .2 2 9 9 0 0 1-11 8.8 9.4 9.4 0 0 1-.8-.3c-.4 0-.8.3-.7.7a10 10 0 0 0 .3.8 10 10 0 0 0 9.2 6 10 10 0 0 0 4-19.2 9.7 9.7 0 0 0-.9-.3c-.3-.1-.7.3-.6.7a9 9 0 0 1 .3.8z"/>
             </svg>
         </button>
-    </nav>
 
-    <!-- PAGE CONTENT -->
+        <figure>
+            <img src="img/logo.png" alt="Logo de VirginiaDevs">
+        </figure>
+
+        <ul id="menu">
+            <li class="navbar-item">
+                <a href="#about" class="aboutTab active">Sobre mí</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="#cv" class="cvTab">Currículum</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="#portfolio" class="portfolioTab">Portafolio</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="#contact" class="contactTab">Contacto</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- MAIN CONTENT -->
     <main>
-        <!-- ASIDE -->
-        <aside class="sidebar">
-            <div class="sidebar-info">
-                <figure>
-                    <img src="img/logo.png" alt="">
-                </figure>
+        <!-- Nav menu -->
+        <nav id="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#about" class="aboutTab active">Sobre mí</a>
+                </li>
 
-                <div class="info-content">
-                    <h1>Virginia Calvo</h1>
-                    <p>Desarrolladora web</p>
-                </div>
+                <li class="navbar-item">
+                    <a href="#cv" class="cvTab">Currículum</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#portfolio" class="portfolioTab">Portafolio</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#contact" class="contactTab">Contacto</a>
+                </li>
+                <li id="navbar-item">
+                    <button id="themeSwitch" aria-label="Modo claro/oscuro">
+                        <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
+                            <path class="moon" fill-rule="evenodd" d="M16.5 6A10.5 10.5 0 0 1 4.7 16.4 8.5 8.5 0 1 0 16.4 4.7l.1 1.3zm-1.7-2a9 9 0 0 1 .2 2 9 9 0 0 1-11 8.8 9.4 9.4 0 0 1-.8-.3c-.4 0-.8.3-.7.7a10 10 0 0 0 .3.8 10 10 0 0 0 9.2 6 10 10 0 0 0 4-19.2 9.7 9.7 0 0 0-.9-.3c-.3-.1-.7.3-.6.7a9 9 0 0 1 .3.8z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Section: ABOUT ME -->
+        <section id="about" class="active">
+            <div class="about-info">
+                <h1>Virginia Calvo</h1>
+                <h2>Desarrolladora web</h2>
+                <span><i class="fas fa-location-dot"></i> Ourense, España</span>
             </div>
 
-            <div class="sidebar-info_more">
-                <div class="separator"></div>
+            <div class="about-resume">
+                <p>Hola soy Virginia y soy una <strong>desarrolladora web</strong> con dos años de experiencia en la creación de páginas web, tiendas online y aplicaciones web.</p>
 
-                <ul class="contacts-list">
-                    <li class="list-item">
-                        <div class="icon-box">
-                            <i class="far fa-envelope"></i>
-                        </div>
+                <div class="social">
+                    <figure>
+                        <img src="img/chica.png" alt="Ilustración de una chica trabajando en su ordenador portátil">
+                    </figure>
 
-                        <div class="contact-info">
-                            <p class="contact-title">Email</p>
-                            <p>virginiacalvopenin@gmail.com</p>
-                        </div>
-                    </li>
-
-                    <li class="list-item">
-                        <div class="icon-box">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Ubicación</p>
-                            <span>Ourense, España</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="separator"></div>
-
-                <ul class="social-list">
-                    <li class="list-item"><a href="" target="_blank" title="Descargar CV en PDF">
-                        <div class="icon-box">
-                            <i class="far fa-file-lines fa-xl"></i>
-                        </div>
-                    </a></li>
-
-                    <li class="list-item"><a href="" target="_blank" title="Visitar perfil de Github">
-                        <div class="icon-box">
-                            <i class="fa-brands fa-github fa-xl"></i>
-                        </div>
-                    </a></li>
-
-                    <li class="list-item"><a href="" target="_blank" title="Visitar perfil de LinkedIn">
-                        <div class="icon-box">
-                            <i class="fa-brands fa-linkedin fa-xl"></i>
-                        </div>
-                    </a></li>
-                </ul>
-            </div>
-
-            <button class="info_more-btn">
-                <span>Mostrar contactos</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </aside>
-
-        <!-- MAIN CONTENT -->
-        <div class="main-content">
-            <nav id="navbar">
-                <ul class="navbar-list">
-                    <li class="navbar-item">
-                        <a href="#about" class="aboutTab active">Sobre mí</a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="#cv" class="cvTab">Currículum</a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="#portfolio" class="portfolioTab">Portafolio</a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="#contact" class="contactTab">Contacto</a>
-                    </li>
-                    <li id="navbar-switch">
-                        <button id="themeSwitch" aria-label="Modo claro/oscuro">
-                            <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
-                                <path class="moon" fill-rule="evenodd" d="M16.5 6A10.5 10.5 0 0 1 4.7 16.4 8.5 8.5 0 1 0 16.4 4.7l.1 1.3zm-1.7-2a9 9 0 0 1 .2 2 9 9 0 0 1-11 8.8 9.4 9.4 0 0 1-.8-.3c-.4 0-.8.3-.7.7a10 10 0 0 0 .3.8 10 10 0 0 0 9.2 6 10 10 0 0 0 4-19.2 9.7 9.7 0 0 0-.9-.3c-.3-.1-.7.3-.6.7a9 9 0 0 1 .3.8z"/>
-                            </svg>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Section: ABOUT ME -->
-            <section id="about" class="active">
-                <header>
-                    <h2>Sobre mí</h2>
-
-                    <div class="separator"></div>
-                </header>
-
-                <article>
-                    <p class="intro">Hola soy Virginia y soy una <strong>desarrolladora web</strong> con dos años de experiencia en la creación de páginas web, tiendas online y aplicaciones web. Me apasiona el diseño frontend y me caracterizo por la dedicación y la especial atención al detalle que pongo en cada proyecto para conseguir un resultado satisfactorio.</p>
-                    <p class="intro">De los proyectos en los que he participado puedo destacar la creación de páginas web y tiendas online en WordPress, utilizando Elementor y WooCommerce. También he creado aplicaciones web en PHP mediante el framework CodeIgniter 3, Bootstrap y jQuery.</p>
-                    <p class="intro">De manera individual me he dedicado al desarrollo de pequeños proyectos creados desde cero, lo que ha hecho que me enamore del CSS nativo. Además de seguir autoformándome en nuevas tecnologías como Astro.</p>
-                    <p class="intro"><strong>No soy freelance</strong>. Actualmente mi objetivo es formar parte de un equipo en el que seguir mejorando mis habilidades, aportando mi experiencia y calidad de trabajo, contribuyendo a un ambiente en el que podamos crecer juntos.</p>
-                </article>
-
-                <article>
-                    <h3>Mis habilidades</h3>
-
-                    <ul class="service-list">
-                        <li class="service-item">
-                            <div class="icon-box">
-                                <img src="img/web.png" alt="Icono de ventana  de navegación">
-                            </div>
-
-                            <div class="service-content">
-                                <h4>Desarrollo web</h4>
-                                <p>Diseño limpio, moderno y centrado en la accesibilidad, el rendimiento y la sostenibilidad.</p>
-                            </div>
+                    <ul class="social-list">
+                        <li class="list-item">
+                            <a href="" target="_blank" title="Descargar CV en PDF">
+                                <span>CV</span>
+                                <div class="icon-box">
+                                    <i class="far fa-file-lines fa-xl"></i>
+                                </div>
+                            </a>
                         </li>
 
-                        <li class="service-item">
-                            <div class="icon-box">
-                                <img src="img/design.png" alt="Icono de pincel sobre una pantalla">
-                            </div>
-
-                            <div class="service-content">
-                                <h4>Diseño responsive</h4>
-                                <p>Desarrollo de sitios web adaptables a cualquier dispositivo, garantizando una experiencia de usuario óptima.</p>
-                            </div>
+                        <li class="list-item">
+                            <a href="" target="_blank" title="Visitar perfil de Github">
+                                <span>Github</span>
+                                <div class="icon-box">
+                                    <i class="fa-brands fa-github fa-xl"></i>
+                                </div>
+                            </a>
                         </li>
 
-                        <li class="service-item">
-                            <div class="icon-box">
-                                <img src="img/commitment.png" alt="Icono de documentos aprobados">
-                            </div>
-
-                            <div class="service-content">
-                                <h4>Perfeccionismo</h4>
-                                <p>Dedicación y especial atención al detalle para conseguir un resultado satisfactorio.</p>
-                            </div>
-                        </li>
-
-                        <li class="service-item">
-                            <div class="icon-box">
-                                <img src="img/teamwork.png" alt="Icono de manos una sobre otra">
-                            </div>
-
-                            <div class="service-content">
-                                <h4>Colaboración</h4>
-                                <p>Trato amable y cooperativo, creando sinergias y un ambiente de trabajo positivo con los compañeros.</p>
-                            </div>
+                        <li class="list-item">
+                            <a href="" target="_blank" title="Visitar perfil de LinkedIn">
+                                <div class="icon-box">
+                                    <i class="fa-brands fa-linkedin fa-xl"></i>
+                                </div>
+                            </a>
                         </li>
                     </ul>
-                </article>
-            </section>
-
-            <!-- Section: CURRICULUM -->
-            <section id="cv">
-                <header>
-                    <h2>Currículum</h2>
-
-                    <div class="separator"></div>
-                </header>
-
-                <article class="timeline">
-                    <div class="timeline-title">
-                        <div class="icon-box">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-
-                        <h3>Experiencia</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <h4>Desarrollo web</h4>
-                            <span>Trilogic | Junio 2019 - Noviembre 2021</span>
-                            <ul class="task-list">
-                                <li class="task">Diseño de páginas web y tiendas online en WordPress con Elementor y WooCommerce.</li>
-                                <li class="task">Desarrollo de aplicaciones web mediante HTML, CSS, Bootstrap, jQuery y PHP (CodeIgniter 3).</li>
-                                <li class="task">Desarrollo de aplicaciones para Alexa en Node.js.</li>
-                            </ul>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4>Desarrollo web (prácticas)</h4>
-                            <span>Trilogic | Marzo - Mayo 2019</span>
-                            <ul class="task-list">
-                                <li class="task">Desarrollo de aplicación web mediante HTML, CSS, Bootstrap, jQuery y PHP (CodeIgniter 3).</li>
-                                <li class="task">Diseño de tienda online en WordPress con Elementor y WooCommerce.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </article>
-
-                <article class="timeline">
-                    <div class="timeline-title">
-                        <div class="icon-box">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-
-                        <h3>Formación</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <h4>Confección y publicación de páginas web</h4>
-                            <span>Academia Postal | 2025</span>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4>Generación Digital Agentes del Cambio</h4>
-                            <span>Estudios Rafer | 2024</span>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4>Ciberseguridad en entornos de las tecnologías de la información</h4>
-                            <span>Uni Eibar-Ermua | 2019 - 2020</span>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4>Desarrollo de aplicaciones web</h4>
-                            <span>Uni Eibar-Ermua | 2018 - 2019</span>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4>Desarrollo de aplicaciones multiplataforma</h4>
-                            <span>Uni Eibar-Ermua | 2012 - 2015</span>
-                        </li>
-                    </ol>
-                </article>
-
-                <article class="skills">
-                    <h3>Tecnologías</h3>
-
-                    <ul class="skill-list">
-                        <li class="skill-item"><img src="img/logo-html5.svg" alt="HTML logo"> <span>HTML</span></li>
-                        <li class="skill-item"><img src="img/logo-css.svg" alt="CSS logo"> <span>CSS</span></li>
-                        <li class="skill-item"><img src="img/logo-bootstrap.svg" alt="Bootstrap logo"> <span>Bootstrap</span></li>
-                        <li class="skill-item"><img src="img/logo-javascript.svg" alt="Javascript logo"> <span>Javascript</span></li>
-                        <li class="skill-item"><img src="img/logo-jquery.svg" alt="jQuery logo"> <span>jQuery</span></li>
-                        <li class="skill-item"><img src="img/logo-php.svg" alt="PHP logo"> <span>PHP</span></li>
-                        <li class="skill-item"><img src="img/logo-wordpress.svg" alt="Wordpress logo"> <span>Wordpress</span></li>
-                        <li class="skill-item"><img src="img/logo-elementor.svg" alt="Elementor logo"> <span>Elementor</span></li>
-                        <li class="skill-item"><img src="img/logo-woocommerce.svg" alt="WooCommerce logo"> <span>WooCommerce</span></li>
-                    </ul>
-                </article>
-            </section>
-
-            <!-- Section: PORTFOLIO -->
-            <section id="portfolio">
-                <header>
-                    <h2>Portafolio</h2>
-
-                    <div class="separator"></div>
-                </header>
-
-                <div class="filter-list">
-                    <button class="filter-item active" id="allFilter">Todos</button>
-                    <button class="filter-item" id="jsFilter">JS</button>
-                    <button class="filter-item" id="webFilter">Páginas web</button>
-                    <button class="filter-item" id="appFilter">Aplicaciones</button>
                 </div>
                 
-                <div class="featured">
-                    <article>
-                        <figure class="project-img">
-                            <img src="img/chica.jpg" alt="Imagen de We Love Run">
-                        </figure>
+                <p>Me apasiona el diseño frontend y me caracterizo por la dedicación y la especial atención al detalle que pongo en cada proyecto para conseguir un resultado satisfactorio.</p>
+                <!--<p class="intro"><strong>No soy freelance</strong>. Actualmente mi objetivo es formar parte de un equipo en el que seguir mejorando mis habilidades, aportando mi experiencia y calidad de trabajo, contribuyendo a un ambiente en el que podamos crecer juntos.</p>-->
+            </div>
 
-                        <h3>We ❤︎ Run</h3>
-        
-                        <div class="techs">
-                            <span>html</span>
-                            <span>css</span>
-                            <span>javascript</span>
-                        </div>
+            
+        </section>
 
-                        <p>Tienda online de moda deportiva.</p>
-                        
-                        <div class="links">
-                            <a href="#" target="_blank" title="Visitar web de We Love Run">
-                                <i class="fa-solid fa-link"></i> Web
-                            </a>
-                        </div>
-                    </article>
-        
-                    <article>
-                        <figure class="project-img">
-                            <img src="img/chica.jpg" alt="Imagen de GatoManía">
-                        </figure>
-
-                        <h3>GatoManía</h3>
-
-                        <div class="techs">
-                            <span>html</span>
-                            <span>css</span>
-                            <span>javascript</span>
-                        </div>
-        
-                        <p>Página web sobre gatos.</p>
-        
-                        <div class="links">
-                            <a href="#" target="_blank" title="Visitar web de GatoManía">
-                                <i class="fa-solid fa-link"></i> Web
-                            </a>
-                        </div>
-                    </article>
-
-                    <article>
-                        <figure class="project-img">
-                            <img src="img/chica.jpg" alt="Imagen de Sabor Casero">
-                        </figure>
-
-                        <h3>Sabor Casero</h3>
-
-                        <div class="techs">
-                            <span>html</span>
-                            <span>css</span>
-                        </div>
-
-                        <p>Página web de recetas tradicionales.</p>
-        
-                        <div class="links">
-                            <a href="#" target="_blank" title="Visitar web de Sabor Casero">
-                                <i class="fa-solid fa-link"></i> Web
-                            </a>
-
-                            <a href="#" target="_blank" title="Ver el código de Sabor Casero">
-                                <i class="fa-solid fa-link"></i> Código
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="up">
-                    <a href="#portfolio" aria-label="Botón para volver al inicio de la web">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Section: CONTACT -->
-            <section id="contact">
-                <header>
-                    <h2>Contacto</h2>
-
+        <!-- Section: CURRICULUM -->
+        <section id="cv">
+            <article>
+                <div class="section-header">
+                    <h3>Experiencia y formación</h3>
                     <div class="separator"></div>
-                </header>
-
-                <img src="" alt="">
-
-                <div class="contact-greeting">
-                    <h3>¡Hagamos algo juntos!</h3>
-                    <p>Me encantaría ayudarte a hacer realidad tus ideas.</p>
                 </div>
 
-                <form action="#" class="contact-form">
-                    <div class="contact-group">
-                        <div class="form-group grupo-nombre">
-                            <div class="input-group">
-                                <label for="nombre">Nombre: </label>
-                                <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="nombre completo" required>
+                <div class="timelines">
+                    <ol class="experience-timeline timeline">
+                        <h4>Experiencia</h4>
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-briefcase"></i>
                             </div>
-                            <p class="input-error">El nombre no puede ir vacío.</p>
-                        </div>
 
-                        <div class="form-group grupo-email">
-                            <div class="input-group">
-                                <label for="email">Email: </label>
-                                <input type="email" id="email" name="email" autocomplete="email" placeholder="ejemplo@email.com" required>
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Desarrollo web</h4>
+                                    <span>Trilogic | Junio 2019 - Noviembre 2021</span>
+                                </div>
                             </div>
-                            <p class="input-error">El email no puede ir vacío y debe tener el formato adecuado (ejemplo@email.com).</p>
-                        </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Desarrollo web (prácticas)</h4>
+                                    <span>Trilogic | Marzo - Mayo 2019</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <ol class="education-timeline timeline">
+                        <h4>Formación</h4>
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Confección y publicación de páginas web</h4>
+                                    <span>Academia Postal | 2025</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Generación Digital Agentes del Cambio</h4>
+                                    <span>Estudios Rafer | 2024</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Ciberseguridad en entornos de las tecnologías de la información</h4>
+                                    <span>Uni Eibar-Ermua | 2019 - 2020</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Desarrollo de aplicaciones web</h4>
+                                    <span>Uni Eibar-Ermua | 2018 - 2019</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <div class="timeline-title">
+                                    <h4>Desarrollo de aplicaciones multiplataforma</h4>
+                                    <span>Uni Eibar-Ermua | 2012 - 2015</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="skills">
+                <div class="section-header">
+                    <h3>Tecnologías</h3>
+                    <div class="separator"></div>
+                </div>
+
+                <ul class="skill-list">
+                    <li class="skill-item"><img src="img/logo-html.png" alt="HTML logo"></li>
+                    <li class="skill-item"><img src="img/logo-css.png" alt="CSS logo"></li>
+                    <li class="skill-item"><img src="img/logo-bootstrap.png" alt="Bootstrap logo"></li>
+                    <li class="skill-item"><img src="img/logo-javascript.png" alt="Javascript logo"></li>
+                    <li class="skill-item"><img src="img/logo-jquery.png" alt="jQuery logo"></li>
+                    <li class="skill-item"><img src="img/logo-php.png" alt="PHP logo"></li>
+                    <li class="skill-item"><img src="img/logo-wordpress.png" alt="Wordpress logo"></li>
+                    <li class="skill-item"><img src="img/logo-elementor.png" alt="Elementor logo"></li>
+                    <li class="skill-item"><img src="img/logo-woocommerce.png" alt="WooCommerce logo"></li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Section: PORTFOLIO -->
+        <section id="portfolio">
+            <div class="section-header">
+                <h3>Proyectos</h3>
+                <div class="separator"></div>
+            </div>
+
+            <div class="filter-list">
+                <button class="filter-btn active" id="allFilter">Todos</button>
+                <button class="filter-btn" id="cssFilter">CSS</button>
+                <button class="filter-btn" id="jsFilter">JS</button>
+                <button class="filter-btn" id="webFilter">Páginas web</button>
+                <button class="filter-btn" id="appFilter">Aplicaciones</button>
+            </div>
+            
+            <div class="featured">
+                <article>
+                    <figure class="project-img">
+                        <img src="img/placeholder.png" alt="Imagen de We Love Run">
+                    </figure>
+
+                    <h3>We ❤︎ Run</h3>
+    
+                    <div class="keywords">
+                        <span>css</span>
+                        <span>js</span>
+                        <span>web</span>
                     </div>
                     
-                    <div class="form-group grupo-mensaje">
-                        <div class="input-group">
-                            <label for="mensaje">Mensaje: </label>
-                            <textarea id="mensaje" name="mensaje" placeholder="cuéntame lo que quieras :)" required></textarea>
-                        </div>
-                        <p class="input-error">El mensaje no puede ir vacío.</p>
+                    <div class="links">
+                        <a href="#" target="_blank" title="Visitar web de We Love Run">
+                            <i class="fa-solid fa-globe"></i> Web
+                        </a>
                     </div>
+                </article>
+    
+                <article>
+                    <figure class="project-img">
+                        <img src="img/placeholder.png" alt="Imagen de GatoManía">
+                    </figure>
 
-                    <div class="form-group grupo-enviar">
-                        <button type="submit" id="btnEnviar" aria-label="Enviar el formulario de contacto">Enviar</button>
+                    <h3>GatoManía</h3>
+
+                    <div class="keywords">
+                        <span>css</span>
+                        <span>web</span>
                     </div>
+    
+                    <div class="links">
+                        <a href="#" target="_blank" title="Visitar web de GatoManía">
+                            <i class="fa-solid fa-globe"></i> Web
+                        </a>
+                    </div>
+                </article>
 
-                    <div class="messages"></div>
-                </form>
-            </section>
-        </div>
+                <article>
+                    <figure class="project-img">
+                        <img src="img/placeholder.png" alt="Imagen de Sabor Casero">
+                    </figure>
+
+                    <h3>Sabor Casero</h3>
+
+                    <div class="keywords">
+                        <span>js</span>
+                        <span>app</span>
+                    </div>
+    
+                    <div class="links">
+                        <a href="#" target="_blank" title="Visitar web de Sabor Casero">
+                            <i class="fa-solid fa-globe"></i> Web
+                        </a>
+
+                        <a href="#" target="_blank" title="Ver el código de Sabor Casero">
+                            <i class="fa-solid fa-code"></i> Código
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section: CONTACT -->
+        <section id="contact">
+            <div class="section-header">
+                <h3>¡Hagamos algo juntos!</h3>
+                <div class="separator"></div>
+            </div>
+
+            <div class="contact-content">
+                <figure>
+                    <img src="img/oficina.jpg" alt="">
+                </figure>
+                
+                <div class="contact-message">
+                    <p>No soy freelance, pero siempre estoy buscando hacer nuevas conexiones. <span>&#129309;</span></p>
+                    
+                    <p>Si estás buscando personal para ampliar tu equipo de desarrollo, ponte en contacto conmigo, me encantaría ayudarte a hacer realidad tus proyectos. <span>&#128522;</span></p>
+
+                    <a href="mailto:" class="action-button">Conectemos</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="signature">
+            <p>Creado con <i class="fas fa-heart"></i> por Virginia.</p>
+        </div>
+
+        <ul class="social-list">
+            <li class="list-item">
+                <a href="" target="_blank" title="Descargar CV en PDF">
+                    <i class="far fa-file-lines fa-xl"></i>
+                </a>
+            </li>
+
+            <li class="list-item">
+                <a href="" target="_blank" title="Visitar perfil de Github">
+                    <i class="fa-brands fa-github fa-xl"></i>
+                </a>
+            </li>
+
+            <li class="list-item">
+                <a href="" target="_blank" title="Visitar perfil de LinkedIn">
+                    <i class="fa-brands fa-linkedin fa-xl"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
 
     <!-- Funciones -->
     <script src="js/functions.js"></script>

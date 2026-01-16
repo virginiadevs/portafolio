@@ -31,87 +31,33 @@ document.getElementById("themeToggle").addEventListener("click", handleToggleCli
 document.getElementById("themeSwitch").addEventListener("click", handleToggleClick);
 // ---------------------------------------------------------------------------------------
 
-/* --- SIDEBAR VIEW MORE --- */
-const sidebar = document.querySelector(".sidebar");
-const sidebarBtn = document.querySelector(".info_more-btn");
-sidebarBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-});
-// ---------------------------------------------------------------------------------------
-
-/* --- ACTIVE TAB --- */
-const links = document.querySelectorAll("#navbar a");
-const sections = document.querySelectorAll(".main-content section");
-
-links.forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
-        
-        // Removes 'active' class from all links and sections
-        removeActive();
-
-        // Adds 'active' class to the clicked link
-        e.target.classList.add("active");
-
-        // Adds 'active' class to the correspondent section
-        const route = link.getAttribute("href").substring(1);
-        document.getElementById(route).classList.add("active");
-
-        //window.scrollTo(0, 0); 
-    });
-});
-
-/* Change to email tab on clicking email 
-const email = document.querySelector(".contact-link");
-email.addEventListener("click", e => {
-    e.preventDefault();
-    removeActive();
-
-    // Adds 'active' class to the contact tab and section
-    document.querySelector("#menu-nav .contactTab").classList.add("active");
-    document.querySelector(".main-content #contact").classList.add("active");
-});*/
-
-/* FUNCTION: to remove active tabs and sections */
-function removeActive() {
-    // Removes 'active' class from all links
-    links.forEach(tab => {
-        tab.classList.remove("active");
-    });
-
-    // Removes 'active' class from all sections
-    sections.forEach(section => {
-        section.classList.remove("active");
-    });
-}
-// ---------------------------------------------------------------------------------------
-
 /* --- PROJECTS FILTER --- */
-const jsFilter = document.getElementById("jsFilter");
-jsFilter.addEventListener("click", () => {
-    const projects = document.querySelectorAll(".featured article");
-    projects.forEach(project => {
+const filterBtns = document.querySelectorAll(".filter-btn");
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        const filterId = e.target.id;
+        
+        const projects = document.querySelectorAll(".featured article");
 
-        let exists = "";
+        projects.forEach(project => {
+            project.classList.remove("hidden");
 
-        const techs = project.querySelectorAll(".techs span");
-        techs.forEach(tech => {
-            if(tech.textContent.includes("javascript")) {
-                exists = true;
+            if(filterId != "allFilter") {
+                let exists = false;
+
+                const keywords = project.querySelectorAll(".keywords span");
+                keywords.forEach(key => {
+                    if(key.textContent.includes(filterId.replace("Filter", ""))) {
+                        exists = true;
+                    }
+                });
+            
+                if(!exists) {
+                    project.classList.add("hidden");
+                }
             }
         });
-        
-        if(!exists) {
-            project.classList.add("hidden");
-        }
     });
-});
-
-// Show all
-const all = document.getElementById("allFilter");
-all.addEventListener("click", () => {
-    const projects = document.querySelectorAll(".featured article");
-    projects.forEach(project => { project.classList.remove("hidden"); });
 });
 
 // Checked/unchecked buttons
@@ -127,5 +73,3 @@ buttons.forEach(button => {
     });
 });
 // ---------------------------------------------------------------------------------------
-
-/* --- FORM VALIDATION --- */
