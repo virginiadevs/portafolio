@@ -12,11 +12,11 @@
     /*--black: #20252c;*/
     --black: #3D3E4E;
     --grey: light-dark(#666, #ccc);
-    --light-grey: #aaaaaa80;
-
     --background-color: light-dark(#fff, var(--black));
     --text-color1: light-dark(var(--black), #f0f2f4);
     --text-color2: var(--grey);
+    
+    --light-grey: #aaaaaa80;
     --box-shadow: 1px 1px 4px var(--light-grey);
     --border-radius: 12px;
     
@@ -181,8 +181,6 @@ section {
     --size: 45px;
     width: var(--size);
     height: var(--size);
-
-    border: 1px solid var(--brand-color3);
     border-radius: var(--border-radius);
     
     display: flex;
@@ -316,31 +314,53 @@ main {
 
 #cv .timelines, .timeline {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/* pasar a row en 768px */
     gap: 1rem;
 
-    & .timeline-item {
+    & .timeline-header {
         display: flex;
-        gap: 1rem;
-
-        /*& figure {
-            --size: 32px;
-            width: var(--size);
-            height: var(--size);
-
-            & img {
-                width: 100%;
-            }
-        }*/
+        align-items: center;
+        gap: 12px;
 
         & .icon-box {
             --size: 35px;
             width: var(--size);
             height: var(--size);
-            margin-top: 5px;
+            background: var(--background-color);
+            box-shadow: 1px 1px 2px var(--light-grey);
+            z-index: 1;
+        }
+    }
+
+    & .timeline-item {
+        display: flex;
+        gap: 1rem;
+        position: relative;
+
+        &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 17px;
+            width: 1px;
+            height: calc(100% + 40px);
+            background: var(--light-grey);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 7px;
+            width: 7px;
+            left: 14px;
+            top: 8px;
+            background: light-dark(var(--brand-color1), var(--brand-color2));
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-color3), transparent 65%);
         }
 
         & .timeline-content {
+            margin-left: 48px;
             flex: 1;
 
             & .timeline-title h4 {
@@ -349,6 +369,7 @@ main {
 
             & .timeline-title span {
                 font-size: 12px;
+                color: var(--text-color2);
             }
         }
     }
