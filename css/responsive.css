@@ -1,121 +1,92 @@
 @media (width >= 480px) {
     main {
-        margin: 2rem;
+        margin: 2.5rem;
         margin-bottom: 4rem;
     }
 
-    /* MAIN CONTENT */
-    .main-content {
-        & #navbar .navbar-list {
-            gap: 20px;
-
-            & a {
-                font-size: 14px;
-            }
-        }
+    footer {
+        margin-inline: 2.5rem;
     }
 }
-
+/*
 @media (width >= 582px) {
-    /* ASIDE */
-    .sidebar .info_more-btn {
-        padding-inline: 7px;
-
-        & i { display: none; }
-        & span { display: block; }
-    }
-
-    /* Section: ABOUT ME */
-    #about .service-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Section: CONTACT */
-    #contact form .contact-group {
-        display: flex;
-        gap: 1rem;
-
-        & .form-group {
-            width: 100%;
-        }
-    }
-}
+    
+}*/
 
 @media (width >= 768px) {
-    /* Section: CURRICULUM */
-    #cv .skill-list { justify-content: space-evenly; }
+    header {
+        & #headerThemeToggle {
+            display: flex;
+            align-self: center;
+        }
 
-    /* Section: PORTFOLIO */
-    #portfolio .featured article .project-img {
-        height: 100%;
+        & #headerMenu {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+        }
     }
-}
 
-
-@media (width >= 1024px) {
     main {
-        margin-bottom: 2rem;
-    }
+        margin: 4rem;
 
-    /* MAIN CONTENT */
-    .main-content {
-        position: relative;
-        margin-inline: auto;
-
-        & #navbar {
-            position: absolute;
-            bottom: auto;
-            top: 0;
-            left: auto;
-            right: 0;
-            width: max-content;
-            padding: .5rem 1.5rem;
-            border-radius: 0 var(--border-radius) 0 var(--border-radius);
-            background: color-mix(in srgb, var(--brand-color3), transparent 80%);
-        }
-    }
-}
-
-@media (width >= 1250px) {
-    main {
-        max-width: 1200px;
-        margin-inline: auto;
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    /* ASIDE */
-    .sidebar {
-        width: auto;
-        position: sticky;
-        top: 3rem;
-        max-height: max-content;
-        height: 100%;
-        padding: 2rem;
-        z-index: 1;
-
-        & .sidebar-info {
-            flex-direction: column;
-        }
-
-        & .sidebar-info_more {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        & .info_more-btn {
+        & #mobileMenu {
             display: none;
         }
     }
 
-    /* MAIN CONTENT */
-    .main-content {
-        min-width: 70%;
-        width: 70%;
-        margin-top: 1rem;
-        padding: 2rem 2rem 1rem;
+    section {
+        margin: 3rem 0;
+    }
+
+    #about {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #portfolio .featured article .project-img {
+        height: 100%;
+    }
+
+    #cv .skill-list { justify-content: space-evenly; }
+
+    #cv .timelines {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact .contact-content {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        max-width: 680px;
+        margin-inline: auto;
+    }
+
+    footer {
+        margin-inline: 4rem;
+        margin-bottom: 0;
     }
 }
+
+@media (width >= 1024px) {
+    main {
+        max-width: 974px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+
+    #cv .timelines {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        max-width: 974px;
+        margin-inline: auto;
+    }
+}
+/*
+@media (width >= 1250px) {
+    main, footer {
+        max-width: 1200px;
+    }
+}*/
