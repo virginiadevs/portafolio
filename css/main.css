@@ -60,10 +60,7 @@ header, footer {
 
 /* HEADER */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px 20px 60px;
+    padding: 10px 20px 80px;
     margin-bottom: 1.5rem;
     background:
         linear-gradient(to bottom,  
@@ -73,18 +70,24 @@ header {
             color-mix(in srgb, var(--background-color), transparent 0%) 100%),
         linear-gradient(to right, var(--brand-color1), var(--brand-color2));
 
-    & #headerThemeToggle {
-        /*display: flex;
-        align-self: center;*/
-        display: none;
-    }
+    & .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    & #headerMenu {
-        /*display: flex;
-        gap: .5rem;
-        flex-wrap: wrap;
-        align-self: center;*/
-        display: none;
+        & #headerThemeToggle {
+            /*display: flex;
+            align-self: center;*/
+            display: none;
+        }
+
+        & #headerMenu {
+            /*display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            align-self: center;*/
+            display: none;
+        }
     }
 }
 
@@ -271,6 +274,7 @@ main {
 
             & img {
                 width: 100%;
+                transform: scaleX(-1);
             }
         }
     }
