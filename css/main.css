@@ -45,6 +45,21 @@ p, span { font-size: 14px; }
 ul, ol { list-style: none; }
 /* ----------- */
 
+/* LIGHT/DARK MODE TOGGLE */
+#headerThemeToggle, #mobileThemeToggle {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transition: transform .5s ease;
+
+    & .sun { fill: light-dark(#000, transparent); }
+    & .moon { fill: light-dark(transparent, #fff); }
+}
+
+header .virginiadevs-logo { filter: brightness(0.5); }
+.dark header .virginiadevs-logo { filter: brightness(0.1) invert(1); }
+/* ----------- */
+
 /* HEADER & FOOTER */
 header, footer {
     & figure {
@@ -52,7 +67,7 @@ header, footer {
         width: var(--size);
         height: var(--size);
 
-        & img {
+        & .virginiadevs-logo {
             width: 100%;
         }
     }
@@ -76,16 +91,10 @@ header {
         justify-content: center;
 
         & #headerThemeToggle {
-            /*display: flex;
-            align-self: center;*/
             display: none;
         }
 
         & #headerMenu {
-            /*display: flex;
-            gap: .5rem;
-            flex-wrap: wrap;
-            align-self: center;*/
             display: none;
         }
     }
@@ -96,25 +105,21 @@ footer {
     margin: 0 1.5rem 3rem;
     padding: 60px 0 20px;
     display: grid;
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    justify-items: center;
     gap: 10px;
     
-    & .signature p { font-size: 12px; }
-    & .social-links { justify-content: flex-end; }
+    & .signature {
+        justify-self: flex-start;
+        & p { font-size: 12px; }
+    }
+
+    & .social-links {
+        justify-self: flex-end;
+    }
 }
 /* ----------- */
-
-/* LIGHT/DARK MODE TOGGLE */
-#headerThemeToggle, #mobileThemeToggle {
-    border: 0;
-    background: none;
-    cursor: pointer;
-    transition: transform .5s ease;
-
-    & .sun { fill: light-dark(#000, transparent); }
-    & .moon { fill: light-dark(transparent, #fff); }
-}
 
 /* MOBILE MENU */
 #mobileMenu {
@@ -224,7 +229,6 @@ main {
     }
 
     & .social-links {
-        /*display: flex;*/
         gap: 1rem;
     
         & .list-item a .icon-box {
