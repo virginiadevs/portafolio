@@ -63,8 +63,6 @@
         height: 100%;
     }
 
-    #cv .skill-list { justify-content: space-evenly; }
-
     #cv .timelines {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -83,23 +81,22 @@
 }
 
 @media (width >= 1024px) {
-    main {
+    /*main {
         margin-bottom: 2rem;
-    }
+    }*/
 
     #cv .timelines {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    footer {
-        max-width: 974px;
+    header .header-content, main, footer {
+        max-width: 900px;
         margin-inline: auto;
     }
 }
 
 @media (width >= 1250px) {
     header .header-content, main, footer {
-        max-width: 1200px;
-        margin-inline: auto;
+        max-width: 1000px;
     }
 }

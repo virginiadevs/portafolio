@@ -308,7 +308,7 @@ main {
 
 #portfolio .featured {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 
     & article {
@@ -370,27 +370,22 @@ main {
 #cv .skill-list {
     margin-top: .5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: .5rem;
+    justify-items: center;
+    align-items: baseline;
 
     & .skill-item {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-        margin-top: .5rem;
-
+        width: 70px;
+    
         & img {
-            height: 70px;
-        }
-
-        & span {
-            font-size: 13px;
-            font-weight: 500;
+            width: 100%;
         }
     }
 
-    & .skill-item:last-child img { width: 50%; }
+    & .skill-item:last-child {
+        width: 80px;
+    }
 }
 
 /* Experience & education */
