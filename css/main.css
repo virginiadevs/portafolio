@@ -154,7 +154,6 @@ footer {
 /* ----------- */
 
 /* REPETING CODE */
-/* Sections */
 section {
     margin: 2rem 0;
 
@@ -182,7 +181,6 @@ section {
     }
 }
 
-/* Icon boxes of social links and section icons */
 .icon-box {
     --size: 45px;
     width: var(--size);
@@ -194,10 +192,15 @@ section {
     align-items: center;
 }
 
-/* Icon boxes of social links in about me and footer */
 .social-links {
     display: flex;
     gap: 10px;
+}
+
+.icons {
+    transition: transform .3s ease;
+
+    &:hover { transform: scale(1.2); }
 }
 /* ----------- */
 
