@@ -327,6 +327,7 @@ main {
             height: 200px;
             border-radius: var(--border-radius);
             overflow: hidden;
+            max-width: 300px;
 
             & img {
                 width: 100%;
