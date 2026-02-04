@@ -73,3 +73,31 @@ buttons.forEach(button => {
     });
 });
 // ---------------------------------------------------------------------------------------
+
+/* --- BUTTON STATE --- */
+function updateBtnState() {
+    const actionBtn = document.querySelector(".action-btn");
+    const officeImg = document.querySelector(".office-img");
+    const workingHours = document.querySelector(".contact-message figure");
+
+    const now = new Date(); 
+    const hour = now.getHours();
+    const day = now.getDay();
+
+    const worktime = hour >= 8 && hour < 18;
+    const workday = day >= 1 && day <= 5;
+
+    if(worktime && workday) {
+        actionBtn.classList.remove("disabled");
+        officeImg.src = "img/oficina.jpg";
+        workingHours.style.display = "none";
+    }
+    else {
+        actionBtn.classList.add("disabled");
+        officeImg.src = "img/oficina-noche.png";
+        workingHours.style.display = "block";
+    }
+}
+
+updateBtnState();
+setInterval(updateBtnState, 60 * 1000);
