@@ -35,8 +35,6 @@
                 flex-wrap: wrap;
                 font-size: 13px;
                 justify-self: flex-end;
-
-                & a:hover { text-decoration: underline; }
             }
         }
     }
@@ -69,9 +67,10 @@
     }
 
     #contact .contact-content {
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        max-width: 680px;
-        margin-inline: auto;
+        grid-template-columns: 400px 1fr;
+        max-width: none;
+        /*align-items: center;*/
+        gap: 2rem;
     }
 
     footer {
@@ -81,10 +80,6 @@
 }
 
 @media (width >= 1024px) {
-    /*main {
-        margin-bottom: 2rem;
-    }*/
-
     #cv .timelines {
         grid-template-columns: repeat(3, 1fr);
     }
