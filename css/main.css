@@ -63,7 +63,7 @@ header .virginiadevs-logo { filter: brightness(0.5); }
 /* HEADER & FOOTER */
 header, footer {
     & figure {
-        --size: 40px;
+        --size: 48px;
         width: var(--size);
         height: var(--size);
 
@@ -204,7 +204,7 @@ main {
 }
 
 /* Section: ABOUT ME */
-#about {
+#sobre-mi {
     display: flex;
     flex-direction: column;
 
@@ -264,7 +264,7 @@ main {
 }
 
 /* Section: PORTFOLIO */
-#portfolio .filter-list {
+#portafolio .filter-list {
     display: flex;
     gap: 1rem;
     padding-left: 5px;
@@ -283,7 +283,7 @@ main {
     }
 }
 
-#portfolio .featured {
+#portafolio .featured {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
@@ -437,7 +437,7 @@ main {
 }
 
 /* Section: CONTACT */
-#contact .contact-content {
+#contacto .contact-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -493,6 +493,7 @@ main {
 
         & figure {
             text-align: center;
+            display: none;
 
             & .working-hours {
                 width: 100px;

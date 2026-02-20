@@ -51,13 +51,13 @@
         margin: 3rem 0;
     }
 
-    #about {
+    #sobre-mi {
         flex-direction: row;
         align-items: center;
         gap: 1rem;
     }
 
-    #portfolio .featured article .project-img {
+    #portafolio .featured article .project-img {
         height: 100%;
     }
 
@@ -66,7 +66,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #contact .contact-content {
+    #contacto .contact-content {
         grid-template-columns: 400px 1fr;
         max-width: none;
         /*align-items: center;*/
