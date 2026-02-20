@@ -89,15 +89,15 @@ function updateBtnState() {
 
     if(worktime && workday) {
         actionBtn.classList.remove("disabled");
-        officeImg.src = "img/oficina.jpg";
+        officeImg.src = "img/oficina.webp";
         workingHours.style.display = "none";
     }
     else {
         actionBtn.classList.add("disabled");
-        officeImg.src = "img/oficina-noche.png";
+        officeImg.src = "img/oficina-noche.webp";
         workingHours.style.display = "block";
     }
 }
 
-updateBtnState();
-setInterval(updateBtnState, 60 * 1000);
+/*updateBtnState();
+setInterval(updateBtnState, 60 * 1000);*/
