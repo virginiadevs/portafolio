@@ -35,6 +35,8 @@
                 flex-wrap: wrap;
                 font-size: 13px;
                 justify-self: flex-end;
+
+                & .menu-item:hover { text-decoration: underline; }
             }
         }
     }
