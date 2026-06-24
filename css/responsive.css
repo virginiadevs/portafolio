@@ -37,6 +37,7 @@
                 justify-self: flex-end;
 
                 & .menu-item:hover { text-decoration: underline; }
+                & a { color: #fff; }
             }
         }
     }

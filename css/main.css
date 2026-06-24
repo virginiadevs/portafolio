@@ -5,8 +5,8 @@
 }
 
 :root {
-    --brand-color1: #1A8359;
-    --brand-color2: #86C337;
+    --brand-color1: #1a7383; /*#1A8359*/
+    --brand-color2: #37c391; /*#86C337*/
     --brand-color3: #bff2de;
 
     --black: #20252c;
@@ -54,12 +54,13 @@ ul, ol { list-style: none; }
     cursor: pointer;
     transition: transform .5s ease;
 
-    & .sun { fill: light-dark(#000, transparent); }
+    & .sun { fill: light-dark(#fff, transparent); }
     & .moon { fill: light-dark(transparent, #fff); }
 }
 
-header .virginiadevs-logo { filter: brightness(0.5); }
-.dark header .virginiadevs-logo { filter: brightness(0.1) invert(1); }
+#mobileThemeToggle .sun { fill: light-dark(#000, transparent); }
+
+header .virginiadevs-logo { filter: brightness(0) invert(1); }
 /* ----------- */
 
 /* HEADER & FOOTER */
