@@ -36,8 +36,8 @@
                 font-size: 13px;
                 justify-self: flex-end;
 
+                & .menu-item, .menu-item a { color: #fff; }
                 & .menu-item:hover { text-decoration: underline; }
-                & a { color: #fff; }
             }
         }
     }
