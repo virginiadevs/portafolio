@@ -5,18 +5,18 @@
 }
 
 :root {
-    --brand-color1: #1a7383; /*#1A8359*/
-    --brand-color2: #37c391; /*#86C337*/
+    --brand-color1: #1a7383;
+    --brand-color2: #37c391;
     --brand-color3: #bff2de;
-
     --black: #20252c;
+    --white: #f0f2f4;
     --grey: light-dark(#666, #ccc);
+
     --background-color: light-dark(#fff, var(--black));
-    --text-color1: light-dark(var(--black), #f0f2f4);
-    --text-color2: var(--grey);
+    --text-color: light-dark(var(--black), var(--white));
     
     --light-grey: #aaaaaa80;
-    --box-shadow: 1px 1px 4px var(--light-grey);
+    --box-shadow: 3px 3px 0 0 var(--light-grey);
     --border-radius: 12px;
     
     color-scheme: light dark;
@@ -30,14 +30,17 @@ body {
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: var(--text-color1);
-    background-color: var(--background-color);
+    color: var(--text-color);
+    background: var(--background-color);
+    background-image: radial-gradient(circle at 1px 1px, var(--light-grey) 1px, transparent 0);
+    background-size: 30px 30px;
+    background-attachment: fixed;
     overflow-y: scroll;
 }
 
 a {
     text-decoration: none;
-    color: var(--text-color1);
+    color: var(--text-color);
 }
 
 p, span { font-size: 14px; }
@@ -54,30 +57,26 @@ ul, ol { list-style: none; }
     cursor: pointer;
     transition: transform .5s ease;
 
-    & .sun { fill: light-dark(#fff, transparent); }
+    & .sun { fill: light-dark(#000, transparent); }
     & .moon { fill: light-dark(transparent, #fff); }
 }
-
-#mobileThemeToggle .sun { fill: light-dark(#000, transparent); }
 /* ----------- */
 
-/* HEADER & FOOTER */
-header, footer {
-    & figure {
-        --size: 48px;
-        width: var(--size);
-        height: var(--size);
+/* LOGOS */
+.my-logo {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
 
-        & .virginiadevs-logo {
-            width: 100%;
-        }
+    & img {
+        width: 100%;
     }
 }
 
 /* HEADER */
 header {
-    padding: 10px 20px 80px;
-    margin-bottom: 1.5rem;
+    position: relative;
+    padding: .7rem 1rem 110px;
     background:
         linear-gradient(to bottom,  
             color-mix(in srgb, var(--background-color), transparent 100%) 0%, 
@@ -85,46 +84,37 @@ header {
             color-mix(in srgb, var(--background-color), transparent 20%) 70%,
             color-mix(in srgb, var(--background-color), transparent 0%) 100%),
         linear-gradient(to right, var(--brand-color1), var(--brand-color2));
-
-    & .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        & #headerThemeToggle {
-            display: none;
-        }
-
-        & #headerMenu {
-            display: none;
-        }
-    }
 }
 
 /* FOOTER */
 footer {
-    margin: 0 1.5rem 3rem;
-    padding: 60px 0 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin: 6rem 0 4rem;
+    display: flex;
     align-items: center;
-    justify-items: center;
-    gap: 10px;
-    
-    & .signature {
-        justify-self: flex-start;
-        & p { font-size: 12px; }
+    justify-content: center;
+    gap: .5rem;
+
+    & figure {
+        background: var(--background-color);
     }
 
-    & .social-links {
-        justify-self: flex-end;
-
-        & .list-item:hover a { color: light-dark(var(--brand-color1), var(--brand-color2)); }
+    & p {
+        font-size: 14px;
     }
 }
 /* ----------- */
 
-/* MOBILE MENU */
+/* MENUS */
+#mobileMenu {
+    & button {
+        margin-top: 2px;
+    }
+}
+
+#desktopMenu {
+    display: none;
+}
+
 #mobileMenu {
     position: fixed;
     bottom: 0; left: 0;
@@ -144,14 +134,6 @@ footer {
             font-size: 13px;
             font-weight: 500;
         }
-
-        & button {
-            margin-top: 2px;
-        }
-
-        & .active {
-            color: light-dark(var(--brand-color1), var(--brand-color2));
-        }
     }
 }
 /* ----------- */
@@ -159,12 +141,13 @@ footer {
 /* REPETING CODE */
 section {
     margin: 2rem 0;
+    scroll-margin-top: 30px;
     
     & + section { border-top: 1px solid var(--light-grey); }
     
     & .subtitle {
         margin: 5px 0 10px;
-        color: var(--text-color2);
+        color: var(--grey);
         font-size: 12px;
         text-align: right;
     }
@@ -208,11 +191,21 @@ section {
     display: flex;
     gap: 10px;
 }
+
+#sobre-mi .social-links .list-item a .icon-box:hover, #contacto .contact-content .contact-message .action-btn:hover {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
 /* ----------- */
 
 /* MAIN CONTENT */
 main {
     margin: .5rem 1.5rem 0;
+
+    & .my-logo {
+        position: absolute;
+        top: .5rem;
+    }
 }
 
 /* Section: ABOUT ME */
@@ -220,21 +213,18 @@ main {
     display: flex;
     flex-direction: column;
 
-    & .about-info {
+    & h2 {
+        font-weight: 600;
+        color: light-dark(var(--brand-color1), var(--brand-color2));
+        margin: -5px 0 5px;
+    }
 
-        & h2 {
-            font-weight: 600;
-            color: light-dark(var(--brand-color1), var(--brand-color2));
-            margin: -5px 0 5px;
-        }
+    & .address {
+        color: var(--grey);
+    }
 
-        & > span {
-            color: var(--text-color2);
-        }
-
-        & p {
-            margin: .5rem 0 1rem;
-        }
+    & p {
+        margin: .5rem 0 1rem;
     }
 
     & .social-links {
@@ -261,12 +251,11 @@ main {
     & .about-img {
         margin-top: 1rem;
         display: flex;
-        align-items: center;
         justify-content: space-evenly;
 
         & figure {
             width: 220px;
-            filter: drop-shadow(4px 2px 6px light-dark(var(--text-color2), var(--light-grey)));
+            filter: drop-shadow(4px 2px 6px light-dark(var(--grey), var(--light-grey)));
 
             & img {
                 width: 100%;
@@ -340,7 +329,7 @@ main {
 
             & a {
                 font-size: 12px;
-                color: var(--text-color2);
+                color: var(--grey);
             }
         }
     }
@@ -441,7 +430,7 @@ main {
 
             & .timeline-title span {
                 font-size: 12px;
-                color: var(--text-color2);
+                color: var(--grey);
             }
         }
     }
@@ -461,7 +450,7 @@ main {
     }
 
     & .contact-message {
-        margin-top: 1rem;
+        margin-top: .5rem;
 
         & p {
             margin-bottom: 1rem;
@@ -484,7 +473,7 @@ main {
             background: linear-gradient(to right, var(--brand-color1), var(--brand-color2));
             color: #fff;
             border-radius: var(--border-radius);
-            box-shadow: 2px 2px 6px var(--light-grey);
+            box-shadow: var(--box-shadow);
 
             max-width: 200px;
             margin-inline: auto;
