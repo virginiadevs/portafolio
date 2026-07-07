@@ -57,7 +57,7 @@ ul, ol { list-style: none; }
     cursor: pointer;
     transition: transform .5s ease;
 
-    & .sun { fill: light-dark(#000, transparent); }
+    & .sun { fill: light-dark(#fff, transparent); }
     & .moon { fill: light-dark(transparent, #fff); }
 }
 /* ----------- */

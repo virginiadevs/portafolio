@@ -35,6 +35,12 @@
             flex-wrap: wrap;
 
             & .menu-item:hover { text-decoration: underline; }
+
+            & a, .sun {
+                color: var(--white);
+                animation-name: nav-text;
+                animation-timeline: scroll();
+            }
         }
     }
 
@@ -110,5 +116,12 @@
         background: color-mix(in srgb, var(--brand-color3), transparent 65%);
         backdrop-filter: blur(8px);
         z-index: 1;
+    }
+}
+
+@keyframes nav-text {
+    1%, 100% {
+        color: var(--black);
+        fill: var(--black);
     }
 }
