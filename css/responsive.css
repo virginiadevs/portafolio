@@ -1,3 +1,4 @@
+/* SCREEN SIZE: 480px - 768px */
 @media (width >= 480px) {
     main {
         margin: 2.5rem;
@@ -9,6 +10,7 @@
     }
 }
 
+/* SCREEN SIZE: 768px - 1024px */
 @media (width >= 768px) {
     header {
         padding-bottom: 140px;
@@ -34,10 +36,11 @@
             gap: 1rem;
             flex-wrap: wrap;
 
-            & .menu-item:hover { text-decoration: underline; }
+            & .menu-item a:hover { text-decoration: underline; }
 
-            & a, .sun {
+            & a:not(.dark a), .sun:not(.dark .sun) {
                 color: var(--white);
+                fill: var(--white);
                 animation-name: nav-text;
                 animation-timeline: scroll();
             }
@@ -64,7 +67,11 @@
         margin-top: 7rem;
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 2rem;
+
+        & .about-img {
+            align-self: center;
+        }
     }
 
     #portafolio .featured article .project-img {
@@ -86,9 +93,7 @@
     }
 
     #contacto .contact-content {
-        grid-template-columns: 400px 1fr;
-        max-width: none;
-        gap: 2rem;
+        align-items: center;
     }
 
     footer {
@@ -97,21 +102,32 @@
     }
 }
 
+/* SCREEN SIZE: 1024px - 1250px */
 @media (width >= 1024px) {
     header #desktopMenu, main, footer {
         max-width: 900px;
         margin-inline: auto;
     }
+
+    #contacto .contact-content {
+        gap: 0;
+
+        & .contact-message {
+            margin-left: -1rem;
+        }
+    }
 }
 
+/* SCREEN SIZE: 1250px + */
 @media (width >= 1250px) {
     header #desktopMenu, main, footer {
         max-width: 1000px;
     }
 }
 
+/* STICKY MENU EFFECTS */
 @keyframes nav-shadow {
-    1%, 100% {
+    0.1%, 100% {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
         background: color-mix(in srgb, var(--brand-color3), transparent 65%);
         backdrop-filter: blur(8px);
@@ -120,7 +136,7 @@
 }
 
 @keyframes nav-text {
-    1%, 100% {
+    0.1%, 100% {
         color: var(--black);
         fill: var(--black);
     }

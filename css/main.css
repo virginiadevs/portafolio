@@ -57,7 +57,7 @@ ul, ol { list-style: none; }
     cursor: pointer;
     transition: transform .5s ease;
 
-    & .sun { fill: light-dark(#fff, transparent); }
+    & .sun { fill: light-dark(#000, transparent); }
     & .moon { fill: light-dark(transparent, #fff); }
 }
 /* ----------- */
@@ -146,7 +146,7 @@ section {
     & + section { border-top: 1px solid var(--light-grey); }
     
     & .subtitle {
-        margin: 5px 0 10px;
+        margin: 5px 5px 10px 0;
         color: var(--grey);
         font-size: 12px;
         text-align: right;
@@ -212,6 +212,7 @@ main {
 #sobre-mi {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 
     & h2 {
         font-weight: 600;
@@ -249,9 +250,8 @@ main {
     }
 
     & .about-img {
-        margin-top: 1rem;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
 
         & figure {
             width: 220px;
@@ -259,7 +259,6 @@ main {
 
             & img {
                 width: 100%;
-                margin-top: -5px;
             }
         }
     }
@@ -439,27 +438,23 @@ main {
 /* Section: CONTACT */
 #contacto .contact-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    max-width: 450px;
-    margin-inline: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 
-    & figure img {
-        width: 100%;
-        border-radius: var(--border-radius);
+    & figure {
+        max-width: 350px;
+        justify-self: center;
+
+        & img {
+            width: 100%;
+            border-radius: var(--border-radius);
+        }
     }
 
     & .contact-message {
-        margin-top: .5rem;
 
         & p {
-            margin-bottom: 1rem;
-            padding: 0 10px;
-        }
-
-        & span {
-            font-size: 20px;
-            line-height: 1;
+            margin: 0 10px;
         }
 
         & .action-btn {
