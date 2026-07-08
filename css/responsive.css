@@ -94,6 +94,10 @@
 
     #contacto .contact-content {
         align-items: center;
+
+        & .contact-message {
+            margin-left: -1rem;
+        }
     }
 
     footer {
@@ -111,10 +115,6 @@
 
     #contacto .contact-content {
         gap: 0;
-
-        & .contact-message {
-            margin-left: -1rem;
-        }
     }
 }
 
@@ -122,6 +122,10 @@
 @media (width >= 1250px) {
     header #desktopMenu, main, footer {
         max-width: 1000px;
+    }
+
+    #contacto .contact-content .contact-message {
+        margin-left: -2rem;
     }
 }
 
