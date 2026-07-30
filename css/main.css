@@ -17,7 +17,7 @@
     
     --light-grey: #aaaaaa80;
     --box-shadow: 3px 3px 0 0 var(--light-grey);
-    --border-radius: 12px;
+    --border-radius: 8px;
     
     color-scheme: light dark;
 }
@@ -445,9 +445,13 @@ main {
         max-width: 350px;
         justify-self: center;
 
+        border-radius: var(--border-radius);
+        border: 10px solid var(--light-grey);
+
         & img {
             width: 100%;
-            border-radius: var(--border-radius);
+            display: block;
+            border: 10px solid #fff;
         }
     }
 
