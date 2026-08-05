@@ -84,20 +84,21 @@ function updateBtnState() {
     const hour = now.getHours();
     const day = now.getDay();
 
-    const worktime = hour >= 8 && hour < 18;
+    const worktime = hour >= 8 && hour < 20;
     const workday = day >= 1 && day <= 5;
 
     if(worktime && workday) {
-        actionBtn.classList.remove("disabled");
+        //actionBtn.classList.remove("disabled");
         officeImg.src = "img/oficina.webp";
-        workingHours.style.display = "none";
+        //workingHours.style.display = "none";
     }
     else {
-        actionBtn.classList.add("disabled");
+        //actionBtn.classList.add("disabled");
         officeImg.src = "img/oficina-noche.webp";
-        workingHours.style.display = "block";
+        officeImg.style.filter = "brightness(200%)";
+        //workingHours.style.display = "block";
     }
 }
 
-/*updateBtnState();
-setInterval(updateBtnState, 60 * 1000);*/
+updateBtnState();
+setInterval(updateBtnState, 60 * 1000);
