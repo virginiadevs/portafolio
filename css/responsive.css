@@ -78,26 +78,9 @@
         height: 100%;
     }
 
-    #cv .timelines {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        & .education {
-            order: 2;
-            margin-top: -2.5rem;
-        }
-
-        & .certificates {
-            margin-left: 2.5rem;
-        }
-    }
-
-    #contacto .contact-content {
-        align-items: center;
-
-        & .contact-message {
-            margin-left: -1rem;
-        }
+    #contacto .contact-content .contact-message {
+        margin-left: -1rem;
+        align-self: center;
     }
 
     footer {

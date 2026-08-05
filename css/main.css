@@ -365,16 +365,14 @@ main {
 /* Experience & education */
 #cv .timelines, .timeline {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: .5rem;
-}
-
-#cv .timelines {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 2rem;
 }
 
 #cv .timeline {
+    gap: .5rem;
     height: fit-content;
+    width: fit-content;
 
     & .timeline-header {
         display: flex;
@@ -435,20 +433,23 @@ main {
     }
 }
 
+#cv .education { order: 2; }
+
 /* Section: CONTACT */
 #contacto .contact-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 
-    & figure {
+    & > figure {
         max-width: 350px;
+        height: fit-content;
         justify-self: center;
 
         border-radius: var(--border-radius);
         border: 10px solid var(--light-grey);
 
-        & img {
+        & .office-img {
             width: 100%;
             display: block;
             border: 10px solid #fff;
@@ -495,7 +496,7 @@ main {
             display: none;
 
             & .working-hours {
-                width: 100px;
+                width: 120px;
                 position: relative;
                 z-index: -1;
                 margin-top: -10px;
