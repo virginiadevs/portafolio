@@ -191,8 +191,9 @@ main {
 
     & h2 {
         font-weight: 600;
+        line-height: 1.1;
         color: light-dark(var(--brand-color1), var(--brand-color2));
-        margin: -5px 0 5px;
+        margin: 0 0 10px;
     }
 
     & .address {
