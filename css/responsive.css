@@ -10,6 +10,14 @@
     }
 }
 
+/* SCREEN SIZE: 640px */
+@media (width >= 640px) {
+    #cv .certificates {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
+
 /* SCREEN SIZE: 768px - 1024px */
 @media (width >= 768px) {
     header {
@@ -83,12 +91,16 @@
         align-self: center;
     }
 
+    #cv .timelines {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
     footer {
         margin-bottom: 2rem;
     }
 }
 
-/* SCREEN SIZE: 1024px - 1250px */
+/* SCREEN SIZE: 1024px - 1280px */
 @media (width >= 1024px) {
     header #desktopMenu, main, footer {
         max-width: 900px;
@@ -100,8 +112,8 @@
     }
 }
 
-/* SCREEN SIZE: 1250px + */
-@media (width >= 1250px) {
+/* SCREEN SIZE: 1280px + */
+@media (width >= 1280px) {
     header #desktopMenu, main, footer {
         max-width: 1000px;
     }

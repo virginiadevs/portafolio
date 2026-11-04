@@ -317,35 +317,35 @@ main {
 
 /* Section: CURRICULUM */
 /* Skills */
-#cv .skill-list {
+#cv .skills { margin-bottom: 3rem; }
+
+#cv .skills .skill-list {
     margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: .5rem;
-    justify-items: center;
-    align-items: baseline;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: balance;
+    background: light-dark(var(--black), #37c39236);
+    padding: 1rem 2rem .5rem;
+    border-radius: var(--border-radius);
 
-    & .skill-item {
-        width: 70px;
-    
-        & img {
-            width: 100%;
-        }
-    }
-
-    & .skill-item:last-child {
-        width: 80px;
-    }
+    & .skill-item.xs img { width: 35px; }
+    & .skill-item.sm img { width: 45px; }
+    & .skill-item img { width: 60px; height: auto; }
+    & .skill-item.lg img { width: 110px; }
+    & .skill-item.xl img { width: 150px; }
 }
 
 /* Experience & education */
-#cv .timelines, .timeline {
+#cv .timelines {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 #cv .timeline {
+    display: grid;
     gap: .5rem;
     height: fit-content;
     width: fit-content;
@@ -408,8 +408,6 @@ main {
         }
     }
 }
-
-#cv .education { order: 2; }
 
 /* Section: CONTACT */
 #contacto .contact-content {
