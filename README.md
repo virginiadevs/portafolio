@@ -1,4 +1,4 @@
-# 👨‍💻 Portafolio Personal
+# 👩🏻‍💻 Portafolio Personal
 
 ¡Bienvenida/o a mi portafolio! 🚀
 
@@ -18,6 +18,7 @@ Este repositorio contiene el código fuente de mi portafolio personal, un espaci
 - HTML5
 - CSS3
 - JavaScript
+- Font Awesome
 
 ---
 
