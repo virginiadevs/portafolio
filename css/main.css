@@ -409,6 +409,8 @@ main {
     }
 }
 
+#cv .education { order: 2; }
+
 /* Section: CONTACT */
 #contacto .contact-content {
     display: grid;

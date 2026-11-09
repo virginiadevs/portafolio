@@ -76,8 +76,8 @@ buttons.forEach(button => {
 
 /* --- BUTTON STATE --- */
 function updateBtnState() {
-    const actionBtn = document.querySelector(".action-btn");
     const officeImg = document.querySelector(".office-img");
+    const actionBtn = document.querySelector(".action-btn");
     const workingHours = document.querySelector(".contact-message figure");
 
     const now = new Date(); 
@@ -87,15 +87,15 @@ function updateBtnState() {
     const worktime = hour >= 8 && hour < 20;
     const workday = day >= 1 && day <= 5;
 
-    if(worktime && workday) {
-        //actionBtn.classList.remove("disabled");
+    if(worktime) {
         officeImg.src = "img/oficina.webp";
+        //actionBtn.classList.remove("disabled");
         //workingHours.style.display = "none";
     }
     else {
-        //actionBtn.classList.add("disabled");
         officeImg.src = "img/oficina-noche.webp";
         officeImg.style.filter = "brightness(200%)";
+        //actionBtn.classList.add("disabled");
         //workingHours.style.display = "block";
     }
 }
